@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: ${(props) => (props.small ? 12 : 23)}rem;
   height: ${(props) => (props.small ? 12 : 23)}rem;
-  padding: 2.4rem;
+  padding: ${(props) => (props.small ? 1.6 : 2.4)}rem;
   font-size: ${(props) => (props.small ? 1.2 : 2.4)}rem;
   font-weight: bold;
   text-align: center;

@@ -8,11 +8,13 @@ const Wrapper = styled.div`
   width: ${(props) => (props.small ? 12 : 23)}rem;
   height: ${(props) => (props.small ? 12 : 23)}rem;
   padding: 2.4rem;
-  font-size: 1.2rem;
+  font-size: ${(props) => (props.small ? 1.2 : 2.4)}rem;
+  font-weight: bold;
   text-align: center;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.label[props.label]};
-  border-radius: 4rem;
+  border-radius: ${(props) => (props.small ? 6 : 12)}rem 0
+    ${(props) => (props.small ? 6 : 12)}rem 0;
   ${(props) => props.theme.mq.small} {
     display: none;
   }

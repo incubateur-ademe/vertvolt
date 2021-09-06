@@ -1,0 +1,99 @@
+{
+  "total": 104,
+  "took": 6,
+  "timed_out": false,
+  "total_values": 1,
+  "total_other": 0,
+  "aggs": [
+    {
+      "total": 104,
+      "value": "Super offre",
+      "results": [
+        {
+          "nom_offre": "Super offre",
+          "clients_offre_labelisee": 0.4,
+          "niveau_labelisation": "Niveau très engagé sans ARENH",
+          "nom_fournisseur": "Fourni",
+          "Recours_ARENH_fournisseur": "Oui",
+          "statut_offre": "Labélisation sur engagement",
+          "_score": null
+        }
+      ]
+    },
+    {
+      "total": 104,
+      "value": "2eme offre",
+      "results": [
+        {
+          "nom_offre": "2eme offre",
+          "clients_offre_labelisee": 0.4,
+          "niveau_labelisation": "Niveau très engagé sans ARENH",
+          "nom_fournisseur": "Fourni",
+          "Recours_ARENH_fournisseur": "Oui",
+          "statut_offre": "Labélisation sur engagement",
+          "_score": null
+        }
+      ]
+    },
+    {
+      "total": 104,
+      "value": "3eme offre",
+      "results": [
+        {
+          "nom_offre": "3eme offre",
+          "clients_offre_labelisee": 0.25,
+          "niveau_labelisation": "Niveau très engagé",
+          "nom_fournisseur": "Fournisseur 2",
+          "Recours_ARENH_fournisseur": "Non",
+          "statut_offre": "Labélisation sur engagement",
+          "_score": null
+        }
+      ]
+    },
+    {
+      "total": 104,
+      "value": "Super offre 2",
+      "results": [
+        {
+          "nom_offre": "Super offre 2",
+          "clients_offre_labelisee": 0.4,
+          "niveau_labelisation": "Niveau engagé sans ARENH",
+          "nom_fournisseur": "Fourni",
+          "Recours_ARENH_fournisseur": "Oui",
+          "statut_offre": "Labélisation sur engagement",
+          "_score": null
+        }
+      ]
+    },
+    {
+      "total": 104,
+      "value": "2eme offre 2",
+      "results": [
+        {
+          "nom_offre": "2eme offre 2",
+          "clients_offre_labelisee": 0.4,
+          "niveau_labelisation": "Niveau engagé",
+          "nom_fournisseur": "Fourni",
+          "Recours_ARENH_fournisseur": "Oui",
+          "statut_offre": "Labélisation sur engagement",
+          "_score": null
+        }
+      ]
+    },
+    {
+      "total": 104,
+      "value": "3eme offre 2",
+      "results": [
+        {
+          "nom_offre": "3eme offre 2",
+          "clients_offre_labelisee": 0.25,
+          "niveau_labelisation": "Niveau très engagé",
+          "nom_fournisseur": "Fournisseur 2",
+          "Recours_ARENH_fournisseur": "Non",
+          "statut_offre": "Labélisation sur engagement",
+          "_score": null
+        }
+      ]
+    }
+  ]
+}

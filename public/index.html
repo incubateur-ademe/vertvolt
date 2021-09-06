@@ -1,0 +1,3211 @@
+<!DOCTYPE html>
+<html
+  lang="fr"
+  dir="ltr"
+  prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "
+>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      ;(window.NREUM || (NREUM = {})).loader_config = {
+        licenseKey: '762c6260b9',
+        applicationID: '392310830',
+      }
+      window.NREUM || (NREUM = {}),
+        (__nr_require = (function (t, e, n) {
+          function r(n) {
+            if (!e[n]) {
+              var i = (e[n] = { exports: {} })
+              t[n][0].call(
+                i.exports,
+                function (e) {
+                  var i = t[n][1][e]
+                  return r(i || e)
+                },
+                i,
+                i.exports
+              )
+            }
+            return e[n].exports
+          }
+          if ('function' == typeof __nr_require) return __nr_require
+          for (var i = 0; i < n.length; i++) r(n[i])
+          return r
+        })(
+          {
+            1: [
+              function (t, e, n) {
+                function r() {}
+                function i(t, e, n) {
+                  return function () {
+                    return (
+                      o(t, [u.now()].concat(f(arguments)), e ? null : this, n),
+                      e ? void 0 : this
+                    )
+                  }
+                }
+                var o = t('handle'),
+                  a = t(8),
+                  f = t(9),
+                  c = t('ee').get('tracer'),
+                  u = t('loader'),
+                  s = NREUM
+                'undefined' == typeof window.newrelic && (newrelic = s)
+                var d = [
+                    'setPageViewName',
+                    'setCustomAttribute',
+                    'setErrorHandler',
+                    'finished',
+                    'addToTrace',
+                    'inlineHit',
+                    'addRelease',
+                  ],
+                  p = 'api-',
+                  l = p + 'ixn-'
+                a(d, function (t, e) {
+                  s[e] = i(p + e, !0, 'api')
+                }),
+                  (s.addPageAction = i(p + 'addPageAction', !0)),
+                  (s.setCurrentRouteName = i(p + 'routeName', !0)),
+                  (e.exports = newrelic),
+                  (s.interaction = function () {
+                    return new r().get()
+                  })
+                var m = (r.prototype = {
+                  createTracer: function (t, e) {
+                    var n = {},
+                      r = this,
+                      i = 'function' == typeof e
+                    return (
+                      o(l + 'tracer', [u.now(), t, n], r),
+                      function () {
+                        if (
+                          (c.emit(
+                            (i ? '' : 'no-') + 'fn-start',
+                            [u.now(), r, i],
+                            n
+                          ),
+                          i)
+                        )
+                          try {
+                            return e.apply(this, arguments)
+                          } catch (t) {
+                            throw (c.emit('fn-err', [arguments, this, t], n), t)
+                          } finally {
+                            c.emit('fn-end', [u.now()], n)
+                          }
+                      }
+                    )
+                  },
+                })
+                a(
+                  'actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get'.split(
+                    ','
+                  ),
+                  function (t, e) {
+                    m[e] = i(l + e)
+                  }
+                ),
+                  (newrelic.noticeError = function (t, e) {
+                    'string' == typeof t && (t = new Error(t)),
+                      o('err', [t, u.now(), !1, e])
+                  })
+              },
+              {},
+            ],
+            2: [
+              function (t, e, n) {
+                function r(t) {
+                  if (NREUM.init) {
+                    for (
+                      var e = NREUM.init, n = t.split('.'), r = 0;
+                      r < n.length - 1;
+                      r++
+                    )
+                      if (((e = e[n[r]]), 'object' != typeof e)) return
+                    return (e = e[n[n.length - 1]])
+                  }
+                }
+                e.exports = { getConfiguration: r }
+              },
+              {},
+            ],
+            3: [
+              function (t, e, n) {
+                function r() {
+                  return f.exists && performance.now
+                    ? Math.round(performance.now())
+                    : (o = Math.max(new Date().getTime(), o)) - a
+                }
+                function i() {
+                  return o
+                }
+                var o = new Date().getTime(),
+                  a = o,
+                  f = t(10)
+                ;(e.exports = r),
+                  (e.exports.offset = a),
+                  (e.exports.getLastTimestamp = i)
+              },
+              {},
+            ],
+            4: [
+              function (t, e, n) {
+                function r(t) {
+                  return !(!t || !t.protocol || 'file:' === t.protocol)
+                }
+                e.exports = r
+              },
+              {},
+            ],
+            5: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = t.getEntries()
+                  n.forEach(function (t) {
+                    'first-paint' === t.name
+                      ? d('timing', ['fp', Math.floor(t.startTime)])
+                      : 'first-contentful-paint' === t.name &&
+                        d('timing', ['fcp', Math.floor(t.startTime)])
+                  })
+                }
+                function i(t, e) {
+                  var n = t.getEntries()
+                  n.length > 0 && d('lcp', [n[n.length - 1]])
+                }
+                function o(t) {
+                  t.getEntries().forEach(function (t) {
+                    t.hadRecentInput || d('cls', [t])
+                  })
+                }
+                function a(t) {
+                  if (t instanceof m && !g) {
+                    var e = Math.round(t.timeStamp),
+                      n = { type: t.type }
+                    e <= p.now()
+                      ? (n.fid = p.now() - e)
+                      : e > p.offset && e <= Date.now()
+                      ? ((e -= p.offset), (n.fid = p.now() - e))
+                      : (e = p.now()),
+                      (g = !0),
+                      d('timing', ['fi', e, n])
+                  }
+                }
+                function f(t) {
+                  'hidden' === t && d('pageHide', [p.now()])
+                }
+                if (
+                  !(
+                    'init' in NREUM &&
+                    'page_view_timing' in NREUM.init &&
+                    'enabled' in NREUM.init.page_view_timing &&
+                    NREUM.init.page_view_timing.enabled === !1
+                  )
+                ) {
+                  var c,
+                    u,
+                    s,
+                    d = t('handle'),
+                    p = t('loader'),
+                    l = t(7),
+                    m = NREUM.o.EV
+                  if (
+                    'PerformanceObserver' in window &&
+                    'function' == typeof window.PerformanceObserver
+                  ) {
+                    c = new PerformanceObserver(r)
+                    try {
+                      c.observe({ entryTypes: ['paint'] })
+                    } catch (v) {}
+                    u = new PerformanceObserver(i)
+                    try {
+                      u.observe({ entryTypes: ['largest-contentful-paint'] })
+                    } catch (v) {}
+                    s = new PerformanceObserver(o)
+                    try {
+                      s.observe({ type: 'layout-shift', buffered: !0 })
+                    } catch (v) {}
+                  }
+                  if ('addEventListener' in document) {
+                    var g = !1,
+                      h = [
+                        'click',
+                        'keydown',
+                        'mousedown',
+                        'pointerdown',
+                        'touchstart',
+                      ]
+                    h.forEach(function (t) {
+                      document.addEventListener(t, a, !1)
+                    })
+                  }
+                  l(f)
+                }
+              },
+              {},
+            ],
+            6: [
+              function (t, e, n) {
+                function r(t, e) {
+                  if (!i) return !1
+                  if (t !== i) return !1
+                  if (!e) return !0
+                  if (!o) return !1
+                  for (
+                    var n = o.split('.'), r = e.split('.'), a = 0;
+                    a < r.length;
+                    a++
+                  )
+                    if (r[a] !== n[a]) return !1
+                  return !0
+                }
+                var i = null,
+                  o = null,
+                  a = /Version\/(\S+)\s+Safari/
+                if (navigator.userAgent) {
+                  var f = navigator.userAgent,
+                    c = f.match(a)
+                  c &&
+                    f.indexOf('Chrome') === -1 &&
+                    f.indexOf('Chromium') === -1 &&
+                    ((i = 'Safari'), (o = c[1]))
+                }
+                e.exports = { agent: i, version: o, match: r }
+              },
+              {},
+            ],
+            7: [
+              function (t, e, n) {
+                function r(t) {
+                  function e() {
+                    t(
+                      a && document[a]
+                        ? document[a]
+                        : document[i]
+                        ? 'hidden'
+                        : 'visible'
+                    )
+                  }
+                  'addEventListener' in document &&
+                    o &&
+                    document.addEventListener(o, e, !1)
+                }
+                e.exports = r
+                var i, o, a
+                'undefined' != typeof document.hidden
+                  ? ((i = 'hidden'),
+                    (o = 'visibilitychange'),
+                    (a = 'visibilityState'))
+                  : 'undefined' != typeof document.msHidden
+                  ? ((i = 'msHidden'), (o = 'msvisibilitychange'))
+                  : 'undefined' != typeof document.webkitHidden &&
+                    ((i = 'webkitHidden'),
+                    (o = 'webkitvisibilitychange'),
+                    (a = 'webkitVisibilityState'))
+              },
+              {},
+            ],
+            8: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [],
+                    r = '',
+                    o = 0
+                  for (r in t) i.call(t, r) && ((n[o] = e(r, t[r])), (o += 1))
+                  return n
+                }
+                var i = Object.prototype.hasOwnProperty
+                e.exports = r
+              },
+              {},
+            ],
+            9: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  e || (e = 0),
+                    'undefined' == typeof n && (n = t ? t.length : 0)
+                  for (
+                    var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i);
+                    ++r < i;
+
+                  )
+                    o[r] = t[e + r]
+                  return o
+                }
+                e.exports = r
+              },
+              {},
+            ],
+            10: [
+              function (t, e, n) {
+                e.exports = {
+                  exists:
+                    'undefined' != typeof window.performance &&
+                    window.performance.timing &&
+                    'undefined' !=
+                      typeof window.performance.timing.navigationStart,
+                }
+              },
+              {},
+            ],
+            ee: [
+              function (t, e, n) {
+                function r() {}
+                function i(t) {
+                  function e(t) {
+                    return t && t instanceof r ? t : t ? u(t, c, a) : a()
+                  }
+                  function n(n, r, i, o, a) {
+                    if ((a !== !1 && (a = !0), !l.aborted || o)) {
+                      t && a && t(n, r, i)
+                      for (
+                        var f = e(i), c = v(n), u = c.length, s = 0;
+                        s < u;
+                        s++
+                      )
+                        c[s].apply(f, r)
+                      var p = d[w[n]]
+                      return p && p.push([b, n, r, f]), f
+                    }
+                  }
+                  function o(t, e) {
+                    y[t] = v(t).concat(e)
+                  }
+                  function m(t, e) {
+                    var n = y[t]
+                    if (n)
+                      for (var r = 0; r < n.length; r++)
+                        n[r] === e && n.splice(r, 1)
+                  }
+                  function v(t) {
+                    return y[t] || []
+                  }
+                  function g(t) {
+                    return (p[t] = p[t] || i(n))
+                  }
+                  function h(t, e) {
+                    l.aborted ||
+                      s(t, function (t, n) {
+                        ;(e = e || 'feature'), (w[n] = e), e in d || (d[e] = [])
+                      })
+                  }
+                  var y = {},
+                    w = {},
+                    b = {
+                      on: o,
+                      addEventListener: o,
+                      removeEventListener: m,
+                      emit: n,
+                      get: g,
+                      listeners: v,
+                      context: e,
+                      buffer: h,
+                      abort: f,
+                      aborted: !1,
+                    }
+                  return b
+                }
+                function o(t) {
+                  return u(t, c, a)
+                }
+                function a() {
+                  return new r()
+                }
+                function f() {
+                  ;(d.api || d.feature) &&
+                    ((l.aborted = !0), (d = l.backlog = {}))
+                }
+                var c = 'nr@context',
+                  u = t('gos'),
+                  s = t(8),
+                  d = {},
+                  p = {},
+                  l = (e.exports = i())
+                ;(e.exports.getOrSetContext = o), (l.backlog = d)
+              },
+              {},
+            ],
+            gos: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  if (i.call(t, e)) return t[e]
+                  var r = n()
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      return (
+                        Object.defineProperty(t, e, {
+                          value: r,
+                          writable: !0,
+                          enumerable: !1,
+                        }),
+                        r
+                      )
+                    } catch (o) {}
+                  return (t[e] = r), r
+                }
+                var i = Object.prototype.hasOwnProperty
+                e.exports = r
+              },
+              {},
+            ],
+            handle: [
+              function (t, e, n) {
+                function r(t, e, n, r) {
+                  i.buffer([t], r), i.emit(t, e, n)
+                }
+                var i = t('ee').get('handle')
+                ;(e.exports = r), (r.ee = i)
+              },
+              {},
+            ],
+            id: [
+              function (t, e, n) {
+                function r(t) {
+                  var e = typeof t
+                  return !t || ('object' !== e && 'function' !== e)
+                    ? -1
+                    : t === window
+                    ? 0
+                    : a(t, o, function () {
+                        return i++
+                      })
+                }
+                var i = 1,
+                  o = 'nr@id',
+                  a = t('gos')
+                e.exports = r
+              },
+              {},
+            ],
+            loader: [
+              function (t, e, n) {
+                function r() {
+                  if (!R++) {
+                    var t = (M.info = NREUM.info),
+                      e = v.getElementsByTagName('script')[0]
+                    if (
+                      (setTimeout(u.abort, 3e4),
+                      !(t && t.licenseKey && t.applicationID && e))
+                    )
+                      return u.abort()
+                    c(E, function (e, n) {
+                      t[e] || (t[e] = n)
+                    })
+                    var n = a()
+                    f('mark', ['onload', n + M.offset], null, 'api'),
+                      f('timing', ['load', n])
+                    var r = v.createElement('script')
+                    0 === t.agent.indexOf('http://') ||
+                    0 === t.agent.indexOf('https://')
+                      ? (r.src = t.agent)
+                      : (r.src = l + '://' + t.agent),
+                      e.parentNode.insertBefore(r, e)
+                  }
+                }
+                function i() {
+                  'complete' === v.readyState && o()
+                }
+                function o() {
+                  f('mark', ['domContent', a() + M.offset], null, 'api')
+                }
+                var a = t(3),
+                  f = t('handle'),
+                  c = t(8),
+                  u = t('ee'),
+                  s = t(6),
+                  d = t(4),
+                  p = t(2),
+                  l = p.getConfiguration('ssl') === !1 ? 'http' : 'https',
+                  m = window,
+                  v = m.document,
+                  g = 'addEventListener',
+                  h = 'attachEvent',
+                  y = m.XMLHttpRequest,
+                  w = y && y.prototype,
+                  b = !d(m.location)
+                NREUM.o = {
+                  ST: setTimeout,
+                  SI: m.setImmediate,
+                  CT: clearTimeout,
+                  XHR: y,
+                  REQ: m.Request,
+                  EV: m.Event,
+                  PR: m.Promise,
+                  MO: m.MutationObserver,
+                }
+                var x = '' + location,
+                  E = {
+                    beacon: 'bam.nr-data.net',
+                    errorBeacon: 'bam.nr-data.net',
+                    agent: 'js-agent.newrelic.com/nr-1210.min.js',
+                  },
+                  O = y && w && w[g] && !/CriOS/.test(navigator.userAgent),
+                  M = (e.exports = {
+                    offset: a.getLastTimestamp(),
+                    now: a,
+                    origin: x,
+                    features: {},
+                    xhrWrappable: O,
+                    userAgent: s,
+                    disabled: b,
+                  })
+                if (!b) {
+                  t(1),
+                    t(5),
+                    v[g]
+                      ? (v[g]('DOMContentLoaded', o, !1), m[g]('load', r, !1))
+                      : (v[h]('onreadystatechange', i), m[h]('onload', r)),
+                    f('mark', ['firstbyte', a.getLastTimestamp()], null, 'api')
+                  var R = 0
+                }
+              },
+              {},
+            ],
+            'wrap-function': [
+              function (t, e, n) {
+                function r(t, e) {
+                  function n(e, n, r, c, u) {
+                    function nrWrapper() {
+                      var o, a, s, p
+                      try {
+                        ;(a = this),
+                          (o = d(arguments)),
+                          (s = 'function' == typeof r ? r(o, a) : r || {})
+                      } catch (l) {
+                        i([l, '', [o, a, c], s], t)
+                      }
+                      f(n + 'start', [o, a, c], s, u)
+                      try {
+                        return (p = e.apply(a, o))
+                      } catch (m) {
+                        throw (f(n + 'err', [o, a, m], s, u), m)
+                      } finally {
+                        f(n + 'end', [o, a, p], s, u)
+                      }
+                    }
+                    return a(e)
+                      ? e
+                      : (n || (n = ''),
+                        (nrWrapper[p] = e),
+                        o(e, nrWrapper, t),
+                        nrWrapper)
+                  }
+                  function r(t, e, r, i, o) {
+                    r || (r = '')
+                    var f,
+                      c,
+                      u,
+                      s = '-' === r.charAt(0)
+                    for (u = 0; u < e.length; u++)
+                      (c = e[u]),
+                        (f = t[c]),
+                        a(f) || (t[c] = n(f, s ? c + r : r, i, c, o))
+                  }
+                  function f(n, r, o, a) {
+                    if (!m || e) {
+                      var f = m
+                      m = !0
+                      try {
+                        t.emit(n, r, o, e, a)
+                      } catch (c) {
+                        i([c, n, r, o], t)
+                      }
+                      m = f
+                    }
+                  }
+                  return t || (t = s), (n.inPlace = r), (n.flag = p), n
+                }
+                function i(t, e) {
+                  e || (e = s)
+                  try {
+                    e.emit('internal-error', t)
+                  } catch (n) {}
+                }
+                function o(t, e, n) {
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      var r = Object.keys(t)
+                      return (
+                        r.forEach(function (n) {
+                          Object.defineProperty(e, n, {
+                            get: function () {
+                              return t[n]
+                            },
+                            set: function (e) {
+                              return (t[n] = e), e
+                            },
+                          })
+                        }),
+                        e
+                      )
+                    } catch (o) {
+                      i([o], n)
+                    }
+                  for (var a in t) l.call(t, a) && (e[a] = t[a])
+                  return e
+                }
+                function a(t) {
+                  return !(t && t instanceof Function && t.apply && !t[p])
+                }
+                function f(t, e) {
+                  var n = e(t)
+                  return (n[p] = t), o(t, n, s), n
+                }
+                function c(t, e, n) {
+                  var r = t[e]
+                  t[e] = f(r, n)
+                }
+                function u() {
+                  for (
+                    var t = arguments.length, e = new Array(t), n = 0;
+                    n < t;
+                    ++n
+                  )
+                    e[n] = arguments[n]
+                  return e
+                }
+                var s = t('ee'),
+                  d = t(9),
+                  p = 'nr@original',
+                  l = Object.prototype.hasOwnProperty,
+                  m = !1
+                ;(e.exports = r),
+                  (e.exports.wrapFunction = f),
+                  (e.exports.wrapInPlace = c),
+                  (e.exports.argsToArray = u)
+              },
+              {},
+            ],
+          },
+          {},
+          ['loader']
+        ))
+    </script>
+    <noscript
+      ><meta
+        http-equiv="Refresh"
+        content="0; URL=/particuliers/big_pipe/no-js?destination=/particuliers/calculer-emissions-carbone-trajets"
+      />
+    </noscript>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:site_name"
+      content="Agir pour la transition écologique | ADEME"
+    />
+    <link
+      rel="canonical"
+      href="https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+    />
+    <meta name="twitter:site" content="@ademe" />
+    <meta
+      name="twitter:description"
+      content="Vous vous demandez quel mode de transport émet le moins de CO2 ? Ce calculateur compare le vélo, la voiture, le train, l&#039;avion en fonction du nombre de kilomètres à réaliser."
+    />
+    <meta
+      name="twitter:title"
+      content="Calculer les émissions de carbone de vos trajets"
+    />
+    <meta
+      property="og:url"
+      content="https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+    />
+    <meta name="twitter:creator" content="@ademe" />
+    <meta
+      property="og:title"
+      content="Calculer les émissions de carbone de vos trajets"
+    />
+    <meta
+      name="twitter:url"
+      content="https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+    />
+    <meta
+      property="og:description"
+      content="Vous vous demandez quel mode de transport émet le moins de CO2 ? Ce calculateur compare le vélo, la voiture, le train, l&#039;avion en fonction du nombre de kilomètres à réaliser."
+    />
+    <meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://agirpourlatransition.ademe.fr/particuliers/themes/custom/aw_particuliers/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      rel="revision"
+      href="https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+    />
+
+    <title>
+      Calculer les émissions de carbone de vos trajets | Particuliers | Agir
+      pour la transition écologique | ADEME
+    </title>
+    <link
+      rel="stylesheet"
+      media="all"
+      href="https://agirpourlatransition.ademe.fr/particuliers/sites/default/files/css/css_wJkRfVEhCeo7_t_8KmV93YBVFKggBAm3oycxdVspBig.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="https://agirpourlatransition.ademe.fr/particuliers/sites/default/files/css/css_Vl8QLXf0TbU1970rXZPw2PVfELUge6Ed-a2de-q3FJA.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="https://agirpourlatransition.ademe.fr/particuliers/sites/default/files/css/css_SsjQHCHLodnkdZaXzw9AFcQgqRBJJNyfRksUp3RPg6I.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="https://agirpourlatransition.ademe.fr/particuliers/sites/default/files/css/css_eGMiN1al7O2T1HL433A8t_NW8SDpep0719fdNoaNois.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="https://agirpourlatransition.ademe.fr/particuliers/sites/default/files/css/css_5j0fQDC2XY9qpmC2KuS4OmqPPDV64gyEQ1DgbEi2eDA.css"
+    />
+
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-TD7VDPP')
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!--[if lte IE 8]>
+      <script src="/particuliers/sites/default/files/js/js_OuTAzj6tP-LbTh713lRzzWt4Gdzneu4gOjoIXvSRmlA.js"></script>
+    <![endif]-->
+    <script src="/particuliers/sites/default/files/js/js_XnSC_qplwmY5JGyUdSeFGRovuJs-bGcySIjURG7jINo.js"></script>
+    <script src="/particuliers/sites/default/files/js/js_EnjIuAQT7n2AIqxWq6bXya32Wkd7d2kXmcRDKSNZyoY.js"></script>
+    <script src="/particuliers/sites/default/files/js/js_pkN1IKrGoSJSYx5edyoTFcWxyFugKxMMCq9FSsVqXVo.js"></script>
+  </head>
+  <body class="path-node page-node-type-article">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TD7VDPP"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <ul class="nav-skip">
+      <li><a href="#menu">Aller à la navigation</a></li>
+      <li><a href="#main">Aller au contenu</a></li>
+      <li><a href="#search">Aller à la recherche</a></li>
+    </ul>
+
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <div class="body-wrapper" id="top">
+        <div class="region-top">
+          <header class="header header--principal" role="banner">
+            <div class="header--principal__top">
+              <div class="container header--principal__top-inner">
+                <div class="m-social">
+                  <ul class="m-social-list">
+                    <li class="m-social-item">
+                      <a
+                        class="m-social-button icon-twitter"
+                        href="https://twitter.com/ademe"
+                        target="_blank"
+                        title="Twitter (nouvelle fenêtre)"
+                        data-social-name="twitter"
+                      >
+                        <span class="sr-only">Nous suivre sur Twitter</span>
+                      </a>
+                    </li>
+                    <li class="m-social-item">
+                      <a
+                        class="m-social-button icon-linkedin"
+                        href="https://www.linkedin.com/company/ademe"
+                        target="_blank"
+                        title="Linkedin (nouvelle fenêtre)"
+                        data-social-name="linkedin"
+                      >
+                        <span class="sr-only">Nous suivre sur Linkedin</span>
+                      </a>
+                    </li>
+                    <li class="m-social-item">
+                      <a
+                        class="m-social-button icon-youtube"
+                        href="https://www.youtube.com/user/ademe"
+                        target="_blank"
+                        title="Youtube (nouvelle fenêtre)"
+                        data-social-name="youtube"
+                      >
+                        <span class="sr-only">Nous suivre sur Youtube</span>
+                      </a>
+                    </li>
+                    <li class="m-social-item">
+                      <a
+                        class="m-social-button icon-rss"
+                        href="https://www.ademe.fr/flux-rss"
+                        target="_blank"
+                        title="Rss (nouvelle fenêtre)"
+                        data-social-name="rss"
+                      >
+                        <span class="sr-only">Flux RSS</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <span
+                  data-big-pipe-placeholder-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_menuducomptedelutilisateur&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=0MQtXvxq3yJWm0ldOygYWO-i5zcTNvVfrFolQZpq3NE"
+                ></span>
+              </div>
+            </div>
+
+            <div class="container header--principal-inner">
+              <div class="logo-wrapper">
+                <div class="logo--01">
+                  <img
+                    src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/logo-republique-francaise.svg"
+                    alt="République Française - Liberté Egalité Fraternité"
+                  />
+                </div>
+                <div class="logo--02">
+                  <a
+                    class="logo-link"
+                    href="https://agirpourlatransition.ademe.fr/particuliers/"
+                    title="Accueil de l'Ademe (Agence de la transition écologique)"
+                  >
+                    <img
+                      src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/logo-ademe.svg"
+                      alt="Ademe - Agence de la transition écologique"
+                    />
+                  </a>
+                </div>
+                <div class="logo--03">
+                  <img
+                    src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/logo-france-relance.svg"
+                    alt="France relance"
+                  />
+                </div>
+                <div class="logo--04">
+                  <img
+                    src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/Logo-Agir-RVB.svg"
+                    alt="Agir pour la transition écologique"
+                  />
+                </div>
+              </div>
+
+              <div class="header-search" role="search">
+                <form
+                  block="block-aw-particuliers-search-header"
+                  action="/particuliers/recherche"
+                  method="get"
+                  id="views-exposed-form-recherche-particulier-page-1"
+                  accept-charset="UTF-8"
+                >
+                  <div class="form--inline clearfix">
+                    <div
+                      class="
+                        form-group
+                        row
+                        js-form-item
+                        form-item
+                        js-form-type-textfield
+                        form-type-textfield
+                        js-form-item-texte
+                        form-item-texte form-no-label
+                      "
+                    >
+                      <div class="col-sm-9">
+                        <input
+                          placeholder="Rechercher..."
+                          data-drupal-selector="edit-texte"
+                          type="text"
+                          id="edit-texte"
+                          name="texte"
+                          value=""
+                          size="30"
+                          maxlength="128"
+                          class="form-text form-control"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="
+                        form-group
+                        row
+                        js-form-item
+                        form-item
+                        js-form-type-select
+                        form-type-select
+                        js-form-item-items-per-page
+                        form-item-items-per-page form-no-label
+                      "
+                    >
+                      <div class="col-sm-9">
+                        <select
+                          class="hidden form-select form-control"
+                          data-drupal-selector="edit-items-per-page"
+                          id="edit-items-per-page"
+                          name="items_per_page"
+                        >
+                          <option value="20" selected="selected">20</option>
+                          <option value="999">999</option>
+                          <option value="All">- All -</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group form-group-submit">
+                      <button
+                        data-drupal-selector="edit-submit-recherche-particulier"
+                        type="submit"
+                        id="edit-submit-recherche-particulier"
+                        value="Lancer la recherche"
+                        class="
+                          button
+                          js-form-submit
+                          form-submit
+                          btn btn-primary btn-arrow
+                        "
+                      >
+                        Lancer la recherche
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </header>
+
+          <div class="header-nav-container">
+            <div class="header-nav-sticky">
+              <div class="container">
+                <nav
+                  class="header-nav navbar navbar-light"
+                  role="navigation"
+                  aria-label="Menu principal"
+                  tabindex="-1"
+                  id="menu"
+                >
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-target="#navbarPrimary"
+                    aria-controls="navbarPrimary"
+                    aria-expanded="false"
+                    aria-label="Menu"
+                  >
+                    <span class="navbar-toggler-text">Menu</span>
+                    <span class="icon-burger" aria-hidden="true"></span>
+                  </button>
+
+                  <div class="navbar-collapse" id="navbarPrimary">
+                    <button
+                      type="button"
+                      class="close"
+                      data-target="#navbarPrimary"
+                      aria-controls="navbarPrimary"
+                      aria-expanded="true"
+                    >
+                      <span class="sr-only">Fermer le menu</span>
+                      <span class="icon-close" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="d-lg-none">
+                      <div class="header-search" role="search">
+                        <form
+                          block="block-aw-particuliers-search-header"
+                          action="/particuliers/recherche"
+                          method="get"
+                          id="views-exposed-form-recherche-particulier-page-1"
+                          accept-charset="UTF-8"
+                        >
+                          <div class="form--inline clearfix">
+                            <div
+                              class="
+                                form-group
+                                row
+                                js-form-item
+                                form-item
+                                js-form-type-textfield
+                                form-type-textfield
+                                js-form-item-texte
+                                form-item-texte form-no-label
+                              "
+                            >
+                              <div class="col-sm-9">
+                                <input
+                                  placeholder="Rechercher..."
+                                  data-drupal-selector="edit-texte"
+                                  type="text"
+                                  id="edit-texte"
+                                  name="texte"
+                                  value=""
+                                  size="30"
+                                  maxlength="128"
+                                  class="form-text form-control"
+                                />
+                              </div>
+                            </div>
+
+                            <div
+                              class="
+                                form-group
+                                row
+                                js-form-item
+                                form-item
+                                js-form-type-select
+                                form-type-select
+                                js-form-item-items-per-page
+                                form-item-items-per-page form-no-label
+                              "
+                            >
+                              <div class="col-sm-9">
+                                <select
+                                  class="hidden form-select form-control"
+                                  data-drupal-selector="edit-items-per-page"
+                                  id="edit-items-per-page"
+                                  name="items_per_page"
+                                >
+                                  <option value="20" selected="selected">
+                                    20
+                                  </option>
+                                  <option value="999">999</option>
+                                  <option value="All">- All -</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="form-group form-group-submit">
+                              <button
+                                data-drupal-selector="edit-submit-recherche-particulier"
+                                type="submit"
+                                id="edit-submit-recherche-particulier"
+                                value="Lancer la recherche"
+                                class="
+                                  button
+                                  js-form-submit
+                                  form-submit
+                                  btn btn-primary btn-arrow
+                                "
+                              >
+                                Lancer la recherche
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+                    <ul class="navbar-nav nav-lvl--1">
+                      <li class="menu-item--expanded nav-item">
+                        <a
+                          href="https://agirpourlatransition.ademe.fr/"
+                          class="nav-link"
+                          >Accueil AGIR</a
+                        >
+
+                        <button
+                          class="btn nav-btn-collapse"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#nav-collapse-submenu-1-1"
+                          aria-controls="nav-collapse-submenu-1-1"
+                          aria-expanded="false"
+                          data-is-opened-text="Fermer"
+                          data-is-closed-text="Déplier"
+                        >
+                          <span class="sr-only"
+                            ><span class="nav-btn-collapse-action"
+                              >Déplier</span
+                            >
+                            la rubrique Accueil AGIR</span
+                          >
+                        </button>
+
+                        <div
+                          class="collapse nav-collapse"
+                          id="nav-collapse-submenu-1-1"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="navbar-nav nav-lvl--2">
+                              <li class="nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/collectivites"
+                                  class="nav-link"
+                                  >Collectivités</a
+                                >
+                              </li>
+                              <li class="nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/entreprises"
+                                  class="nav-link"
+                                  >Entreprises</a
+                                >
+                              </li>
+                              <li class="nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/particuliers"
+                                  class="nav-link"
+                                  >Particuliers</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          href="https://agirpourlatransition.ademe.fr/particuliers/"
+                          class="nav-link"
+                          >Particuliers</a
+                        >
+
+                        <button
+                          class="btn nav-btn-collapse"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#nav-collapse-submenu-1-2"
+                          aria-controls="nav-collapse-submenu-1-2"
+                          aria-expanded="false"
+                          data-is-opened-text="Fermer"
+                          data-is-closed-text="Déplier"
+                        >
+                          <span class="sr-only"
+                            ><span class="nav-btn-collapse-action"
+                              >Déplier</span
+                            >
+                            la rubrique Particuliers</span
+                          >
+                        </button>
+
+                        <div
+                          class="collapse nav-collapse"
+                          id="nav-collapse-submenu-1-2"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="navbar-nav nav-lvl--2">
+                              <li class="menu-item--expanded nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau"
+                                  class="nav-link"
+                                  >Au bureau</a
+                                >
+
+                                <button
+                                  class="btn nav-btn-collapse"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#nav-collapse-submenu-2-1"
+                                  aria-controls="nav-collapse-submenu-2-1"
+                                  aria-expanded="false"
+                                  data-is-opened-text="Fermer"
+                                  data-is-closed-text="Déplier"
+                                >
+                                  <span class="sr-only"
+                                    ><span class="nav-btn-collapse-action"
+                                      >Déplier</span
+                                    >
+                                    la rubrique Au bureau</span
+                                  >
+                                </button>
+
+                                <div
+                                  class="collapse nav-collapse"
+                                  id="nav-collapse-submenu-2-1"
+                                >
+                                  <div class="nav-collapse-inner">
+                                    <ul class="navbar-nav nav-lvl--3">
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes"
+                                          class="nav-link"
+                                          >Bons gestes</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/bureau/communication-responsable"
+                                          class="nav-link"
+                                          >Communication responsable</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements"
+                                          class="nav-link"
+                                          >Déplacements</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/bureau/numerique"
+                                          class="nav-link"
+                                          >Numérique</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/bureau/publications"
+                                          class="nav-link"
+                                          >Nos publications</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/bureau/infographies"
+                                          class="nav-link"
+                                          >Nos infographies</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-item--expanded nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso"
+                                  class="nav-link"
+                                  >Conso</a
+                                >
+
+                                <button
+                                  class="btn nav-btn-collapse"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#nav-collapse-submenu-2-2"
+                                  aria-controls="nav-collapse-submenu-2-2"
+                                  aria-expanded="false"
+                                  data-is-opened-text="Fermer"
+                                  data-is-closed-text="Déplier"
+                                >
+                                  <span class="sr-only"
+                                    ><span class="nav-btn-collapse-action"
+                                      >Déplier</span
+                                    >
+                                    la rubrique Conso</span
+                                  >
+                                </button>
+
+                                <div
+                                  class="collapse nav-collapse"
+                                  id="nav-collapse-submenu-2-2"
+                                >
+                                  <div class="nav-collapse-inner">
+                                    <ul class="navbar-nav nav-lvl--3">
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation"
+                                          class="nav-link"
+                                          >Alimentation</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/conso-responsable"
+                                          class="nav-link"
+                                          >Conso responsable</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/droit-conso"
+                                          class="nav-link"
+                                          >Droit de la conso</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/mode"
+                                          class="nav-link"
+                                          >Mode</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/noel"
+                                          class="nav-link"
+                                          >Noël</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/publications"
+                                          class="nav-link"
+                                          >Nos publications</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/conso/infographies"
+                                          class="nav-link"
+                                          >Nos infographies</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-item--expanded nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison"
+                                  class="nav-link"
+                                  >Maison</a
+                                >
+
+                                <button
+                                  class="btn nav-btn-collapse"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#nav-collapse-submenu-2-3"
+                                  aria-controls="nav-collapse-submenu-2-3"
+                                  aria-expanded="false"
+                                  data-is-opened-text="Fermer"
+                                  data-is-closed-text="Déplier"
+                                >
+                                  <span class="sr-only"
+                                    ><span class="nav-btn-collapse-action"
+                                      >Déplier</span
+                                    >
+                                    la rubrique Maison</span
+                                  >
+                                </button>
+
+                                <div
+                                  class="collapse nav-collapse"
+                                  id="nav-collapse-submenu-2-3"
+                                >
+                                  <div class="nav-collapse-inner">
+                                    <ul class="navbar-nav nav-lvl--3">
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie"
+                                          class="nav-link"
+                                          >Économies d&#039;énergie</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/dechets"
+                                          class="nav-link"
+                                          >Déchets</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/cuisine"
+                                          class="nav-link"
+                                          >Cuisine</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/travaux"
+                                          class="nav-link"
+                                          >Travaux</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/emmenagement"
+                                          class="nav-link"
+                                          >Emménagement</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage"
+                                          class="nav-link"
+                                          >Jardinage</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/decoration"
+                                          class="nav-link"
+                                          >Décoration</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/menage"
+                                          class="nav-link"
+                                          >Ménage</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/sante"
+                                          class="nav-link"
+                                          >Santé</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/publications"
+                                          class="nav-link"
+                                          >Nos publications</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/infographies"
+                                          class="nav-link"
+                                          >Nos infographies</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-item--expanded nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents"
+                                  class="nav-link"
+                                  >Parents</a
+                                >
+
+                                <button
+                                  class="btn nav-btn-collapse"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#nav-collapse-submenu-2-4"
+                                  aria-controls="nav-collapse-submenu-2-4"
+                                  aria-expanded="false"
+                                  data-is-opened-text="Fermer"
+                                  data-is-closed-text="Déplier"
+                                >
+                                  <span class="sr-only"
+                                    ><span class="nav-btn-collapse-action"
+                                      >Déplier</span
+                                    >
+                                    la rubrique Parents</span
+                                  >
+                                </button>
+
+                                <div
+                                  class="collapse nav-collapse"
+                                  id="nav-collapse-submenu-2-4"
+                                >
+                                  <div class="nav-collapse-inner">
+                                    <ul class="navbar-nav nav-lvl--3">
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/parents/ado"
+                                          class="nav-link"
+                                          >Ado</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/parents/bebe"
+                                          class="nav-link"
+                                          >Bébé</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/parents/ecole"
+                                          class="nav-link"
+                                          >École</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/parents/enfant"
+                                          class="nav-link"
+                                          >Enfant</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/parents/publications"
+                                          class="nav-link"
+                                          >Nos publications</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/parents/infographies"
+                                          class="nav-link"
+                                          >Nos infographies</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-item--expanded nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs"
+                                  class="nav-link"
+                                  >Vacances et loisirs</a
+                                >
+
+                                <button
+                                  class="btn nav-btn-collapse"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#nav-collapse-submenu-2-5"
+                                  aria-controls="nav-collapse-submenu-2-5"
+                                  aria-expanded="false"
+                                  data-is-opened-text="Fermer"
+                                  data-is-closed-text="Déplier"
+                                >
+                                  <span class="sr-only"
+                                    ><span class="nav-btn-collapse-action"
+                                      >Déplier</span
+                                    >
+                                    la rubrique Vacances et loisirs</span
+                                  >
+                                </button>
+
+                                <div
+                                  class="collapse nav-collapse"
+                                  id="nav-collapse-submenu-2-5"
+                                >
+                                  <div class="nav-collapse-inner">
+                                    <ul class="navbar-nav nav-lvl--3">
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/hiver"
+                                          class="nav-link"
+                                          >Hiver</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/ete"
+                                          class="nav-link"
+                                          >Été</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/sport"
+                                          class="nav-link"
+                                          >Sport</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/publications"
+                                          class="nav-link"
+                                          >Nos publications</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/infographies"
+                                          class="nav-link"
+                                          >Nos infographies</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-item--expanded nav-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances"
+                                  class="nav-link"
+                                  >Finances</a
+                                >
+
+                                <button
+                                  class="btn nav-btn-collapse"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#nav-collapse-submenu-2-6"
+                                  aria-controls="nav-collapse-submenu-2-6"
+                                  aria-expanded="false"
+                                  data-is-opened-text="Fermer"
+                                  data-is-closed-text="Déplier"
+                                >
+                                  <span class="sr-only"
+                                    ><span class="nav-btn-collapse-action"
+                                      >Déplier</span
+                                    >
+                                    la rubrique Finances</span
+                                  >
+                                </button>
+
+                                <div
+                                  class="collapse nav-collapse"
+                                  id="nav-collapse-submenu-2-6"
+                                >
+                                  <div class="nav-collapse-inner">
+                                    <ul class="navbar-nav nav-lvl--3">
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-deplacements"
+                                          class="nav-link"
+                                          >Aides aux déplacements</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-a-renovation"
+                                          class="nav-link"
+                                          >Aides à la rénovation</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/investissements-verts"
+                                          class="nav-link"
+                                          >Investissements verts</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/publications"
+                                          class="nav-link"
+                                          >Nos publications</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/infographies"
+                                          class="nav-link"
+                                          >Nos infographies</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.ademe.fr" class="nav-link"
+                          >Ademe.fr</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          href="http://spec.info.ademe.fr/com_clients/1993/202012/form_ademeinfos/Form_ADEME_INFOS.html"
+                          class="nav-link"
+                          >Ademe infos</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://librairie.ademe.fr/" class="nav-link"
+                          >La librairie</a
+                        >
+                      </li>
+                    </ul>
+
+                    <div class="header-mobile d-lg-none">
+                      <span
+                        data-big-pipe-placeholder-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_menuducomptedelutilisateur&amp;args%5B1%5D&amp;args%5B2%5D&amp;token=WeHpzNmfqGDU7lgld6-_o1rwBPC5FV7TuH_bM6pG8WA"
+                      ></span>
+                      <div class="m-social">
+                        <ul class="m-social-list">
+                          <li class="m-social-item">
+                            <a
+                              class="m-social-button icon-twitter"
+                              href="https://twitter.com/ademe"
+                              target="_blank"
+                              title="Twitter (nouvelle fenêtre)"
+                              data-social-name="twitter"
+                            >
+                              <span class="sr-only"
+                                >Nous suivre sur Twitter</span
+                              >
+                            </a>
+                          </li>
+                          <li class="m-social-item">
+                            <a
+                              class="m-social-button icon-linkedin"
+                              href="https://www.linkedin.com/company/ademe"
+                              target="_blank"
+                              title="Linkedin (nouvelle fenêtre)"
+                              data-social-name="linkedin"
+                            >
+                              <span class="sr-only"
+                                >Nous suivre sur Linkedin</span
+                              >
+                            </a>
+                          </li>
+                          <li class="m-social-item">
+                            <a
+                              class="m-social-button icon-youtube"
+                              href="https://www.youtube.com/user/ademe"
+                              target="_blank"
+                              title="Youtube (nouvelle fenêtre)"
+                              data-social-name="youtube"
+                            >
+                              <span class="sr-only"
+                                >Nous suivre sur Youtube</span
+                              >
+                            </a>
+                          </li>
+                          <li class="m-social-item">
+                            <a
+                              class="m-social-button icon-rss"
+                              href="https://www.ademe.fr/flux-rss"
+                              target="_blank"
+                              title="Rss (nouvelle fenêtre)"
+                              data-social-name="rss"
+                            >
+                              <span class="sr-only">Flux RSS</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="navbar-desktop d-none d-lg-block">
+                    <ul class="navbar-nav">
+                      <li class="menu-item nav-item">
+                        <a
+                          class="nav-link"
+                          href="https://agirpourlatransition.ademe.fr/particuliers/"
+                        >
+                          <span class="icon-home" aria-hidden="true"></span>
+                          <span class="sr-only">Accueil</span></a
+                        >
+                      </li>
+                      <li class="menu-item menu-item--expanded nav-item">
+                        <button
+                          class="nav-link"
+                          type="button"
+                          id="collapse927128083"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Au bureau
+                        </button>
+                        <div
+                          class="nav-collapse dropdown-menu"
+                          aria-labelledby="collapse927128083"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="nav-submenu">
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes"
+                                  class="nav-submenu-link"
+                                >
+                                  Bons gestes</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau/communication-responsable"
+                                  class="nav-submenu-link"
+                                >
+                                  Communication responsable</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements"
+                                  class="nav-submenu-link"
+                                >
+                                  Déplacements</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau/numerique"
+                                  class="nav-submenu-link"
+                                >
+                                  Numérique</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau/publications"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos publications</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau/infographies"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos infographies</a
+                                >
+                              </li>
+
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/bureau"
+                                  class="nav-submenu-link"
+                                >
+                                  Tous les articles</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="menu-item menu-item--expanded nav-item">
+                        <button
+                          class="nav-link"
+                          type="button"
+                          id="collapse1278480952"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Conso
+                        </button>
+                        <div
+                          class="nav-collapse dropdown-menu"
+                          aria-labelledby="collapse1278480952"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="nav-submenu">
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation"
+                                  class="nav-submenu-link"
+                                >
+                                  Alimentation</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/conso-responsable"
+                                  class="nav-submenu-link"
+                                >
+                                  Conso responsable</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/droit-conso"
+                                  class="nav-submenu-link"
+                                >
+                                  Droit de la conso</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/mode"
+                                  class="nav-submenu-link"
+                                >
+                                  Mode</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/noel"
+                                  class="nav-submenu-link"
+                                >
+                                  Noël</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/publications"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos publications</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso/infographies"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos infographies</a
+                                >
+                              </li>
+
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/conso"
+                                  class="nav-submenu-link"
+                                >
+                                  Tous les articles</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="menu-item menu-item--expanded nav-item">
+                        <button
+                          class="nav-link"
+                          type="button"
+                          id="collapse558403833"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Maison
+                        </button>
+                        <div
+                          class="nav-collapse dropdown-menu"
+                          aria-labelledby="collapse558403833"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="nav-submenu">
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie"
+                                  class="nav-submenu-link"
+                                >
+                                  Économies d&#039;énergie</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/dechets"
+                                  class="nav-submenu-link"
+                                >
+                                  Déchets</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/cuisine"
+                                  class="nav-submenu-link"
+                                >
+                                  Cuisine</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/travaux"
+                                  class="nav-submenu-link"
+                                >
+                                  Travaux</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/emmenagement"
+                                  class="nav-submenu-link"
+                                >
+                                  Emménagement</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage"
+                                  class="nav-submenu-link"
+                                >
+                                  Jardinage</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/decoration"
+                                  class="nav-submenu-link"
+                                >
+                                  Décoration</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/menage"
+                                  class="nav-submenu-link"
+                                >
+                                  Ménage</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/sante"
+                                  class="nav-submenu-link"
+                                >
+                                  Santé</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/publications"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos publications</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison/infographies"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos infographies</a
+                                >
+                              </li>
+
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/maison"
+                                  class="nav-submenu-link"
+                                >
+                                  Tous les articles</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="menu-item menu-item--expanded nav-item">
+                        <button
+                          class="nav-link"
+                          type="button"
+                          id="collapse1492428154"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Parents
+                        </button>
+                        <div
+                          class="nav-collapse dropdown-menu"
+                          aria-labelledby="collapse1492428154"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="nav-submenu">
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents/ado"
+                                  class="nav-submenu-link"
+                                >
+                                  Ado</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents/bebe"
+                                  class="nav-submenu-link"
+                                >
+                                  Bébé</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents/ecole"
+                                  class="nav-submenu-link"
+                                >
+                                  École</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents/enfant"
+                                  class="nav-submenu-link"
+                                >
+                                  Enfant</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents/publications"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos publications</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents/infographies"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos infographies</a
+                                >
+                              </li>
+
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/parents"
+                                  class="nav-submenu-link"
+                                >
+                                  Tous les articles</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="menu-item menu-item--expanded nav-item">
+                        <button
+                          class="nav-link"
+                          type="button"
+                          id="collapse1329236630"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Vacances et loisirs
+                        </button>
+                        <div
+                          class="nav-collapse dropdown-menu"
+                          aria-labelledby="collapse1329236630"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="nav-submenu">
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/hiver"
+                                  class="nav-submenu-link"
+                                >
+                                  Hiver</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/ete"
+                                  class="nav-submenu-link"
+                                >
+                                  Été</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/sport"
+                                  class="nav-submenu-link"
+                                >
+                                  Sport</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/publications"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos publications</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs/infographies"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos infographies</a
+                                >
+                              </li>
+
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/vacances-loisirs"
+                                  class="nav-submenu-link"
+                                >
+                                  Tous les articles</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="menu-item menu-item--expanded nav-item">
+                        <button
+                          class="nav-link"
+                          type="button"
+                          id="collapse994357806"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Finances
+                        </button>
+                        <div
+                          class="nav-collapse dropdown-menu"
+                          aria-labelledby="collapse994357806"
+                        >
+                          <div class="nav-collapse-inner">
+                            <ul class="nav-submenu">
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-deplacements"
+                                  class="nav-submenu-link"
+                                >
+                                  Aides aux déplacements</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-a-renovation"
+                                  class="nav-submenu-link"
+                                >
+                                  Aides à la rénovation</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances/investissements-verts"
+                                  class="nav-submenu-link"
+                                >
+                                  Investissements verts</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances/publications"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos publications</a
+                                >
+                              </li>
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances/infographies"
+                                  class="nav-submenu-link"
+                                >
+                                  Nos infographies</a
+                                >
+                              </li>
+
+                              <li class="nav-submenu-item">
+                                <a
+                                  href="https://agirpourlatransition.ademe.fr/particuliers/finances"
+                                  class="nav-submenu-link"
+                                >
+                                  Tous les articles</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <main id="main" class="main" role="main">
+          <nav
+            class="breadcrumb-wrapper"
+            role="navigation"
+            aria-label="Fil d'ariane"
+          >
+            <div class="container">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="https://agirpourlatransition.ademe.fr/particuliers/"
+                    >Accueil</a
+                  >
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Calculer les émissions de carbone de vos trajets
+                </li>
+              </ol>
+            </div>
+          </nav>
+
+          <div class="container">
+            <div class="main__content">
+              <div class="row">
+                <div class="col-lg">
+                  <div data-drupal-messages-fallback class="hidden"></div>
+                  <span
+                    data-big-pipe-placeholder-id="callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages&amp;args%5B0%5D&amp;token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA"
+                  ></span>
+
+                  <article
+                    data-history-node-id="433"
+                    role="article"
+                    about="/particuliers/calculer-emissions-carbone-trajets"
+                    class="
+                      node
+                      node--type-article
+                      node--promoted
+                      node--view-mode-runfull
+                    "
+                  >
+                    <div class="o-teaser o-teaser--wide">
+                      <div class="o-teaser__content">
+                        <h1 class="o-teaser__title">VertVolt</h1>
+
+                        <ul class="o-teaser__content-top">
+                          <li class="a-info">
+                            <i
+                              aria-hidden="true"
+                              class="a-info--date"
+                              title=""
+                            ></i
+                            >29 mai 2020
+                          </li>
+                        </ul>
+
+                        <div class="o-teaser__lead">
+                          <p>
+                            Découvrez le nouveau label d'électricité verte de
+                            l'ADEME
+                          </p>
+                        </div>
+
+                        <div class="o-teaser__content-bottom">
+                          <p class="a-info share-count">
+                            <i
+                              aria-hidden="true"
+                              class="a-info--share"
+                              title="Intentions de partages"
+                            ></i>
+                            <span class="sr-only">Intentions de partages</span>
+                            <span class="count">867 partages</span>
+                          </p>
+
+                          <p class="a-info read-time">
+                            <i
+                              aria-hidden="true"
+                              class="a-info--time"
+                              title="Durée de lecture : "
+                            ></i>
+                            <span class="sr-only">Durée de lecture : </span>
+                            <span class="time">1 minute</span>
+                          </p>
+                        </div>
+
+                        <span
+                          data-big-pipe-placeholder-id="callback=flag.link_builder%3Abuild&amp;args%5B0%5D=node&amp;args%5B1%5D=433&amp;args%5B2%5D=share&amp;token=d5YWAXBtiK3OYnsWFgjLYTFpbXZZyOYXHIvUZPsxdP8"
+                        ></span>
+                        <div class="m-share">
+                          <ul class="m-share-list">
+                            <li class="m-share-item">
+                              <a
+                                class="m-share-button icon-envelope"
+                                href="mailto:?subject=ADEME - à lire : Calculer les émissions de carbone de vos trajets&body=Bonjour, voici un article intéressant que je viens de découvrir sur le site de l’ADEME :%0D%0ACalculer les émissions de carbone de vos trajets%0D%0AVous vous demandez quel mode de transport émet le moins de CO2 ? Ce calculateur compare le vélo, la voiture, le train, l&#039;avion en fonction du nombre de kilomètres à réaliser.%0D%0Ahttps://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+                                rel="nofollow"
+                                title="Partager ce contenu par email"
+                                ><span class="sr-only"
+                                  >Partager ce contenu par email</span
+                                ></a
+                              >
+                            </li>
+
+                            <li class="m-share-item">
+                              <a
+                                class="m-share-button icon-facebook"
+                                rel="nofollow"
+                                href="https://www.facebook.com/sharer/sharer.php?u=https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+                                target="_blank"
+                                title="Partager ce contenu sur Facebook"
+                              >
+                                <span class="sr-only"
+                                  >Partager ce contenu sur Facebook</span
+                                ></a
+                              >
+                            </li>
+
+                            <li class="m-share-item">
+                              <a
+                                class="m-share-button icon-twitter"
+                                rel="nofollow"
+                                href="http://twitter.com/intent/tweet?text=Calculer les émissions de carbone de vos trajets+https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+                                target="_blank"
+                                title="Partager ce contenu sur Twitter"
+                              >
+                                <span class="sr-only"
+                                  >Partager ce contenu sur Twitter</span
+                                >
+                              </a>
+                            </li>
+
+                            <li class="m-share-item">
+                              <a
+                                class="m-share-button icon-linkedin"
+                                rel="nofollow"
+                                href="https://www.linkedin.com/shareArticle?mini=true&url=https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets&title=Calculer les émissions de carbone de vos trajets&summary=Calculer les émissions de carbone de vos trajets&source=LinkedIn"
+                                target="_blank"
+                                title="Partager ce contenu sur LinkedIn"
+                              >
+                                <span class="sr-only"
+                                  >Partager ce contenu sur LinkedIn</span
+                                >
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="wysiwyg">
+                      <div
+                        id="paragraph-4554"
+                        class="
+                          paragraph
+                          paragraph--type--section-actualite
+                          paragraph--view-mode--default
+                          o-sections-actualite
+                        "
+                      >
+                        <h2 class="o-sections-actualite-title"></h2>
+                        <div class="o-sections-actualite-desc">
+                          <vertvolt-component></vertvolt-component>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="m-share--right">
+                      <div class="m-share">
+                        <ul class="m-share-list">
+                          <li class="m-share-item">
+                            <a
+                              class="m-share-button icon-envelope"
+                              href="mailto:?subject=ADEME - à lire : Calculer les émissions de carbone de vos trajets&body=Bonjour, voici un article intéressant que je viens de découvrir sur le site de l’ADEME :%0D%0ACalculer les émissions de carbone de vos trajets%0D%0AVous vous demandez quel mode de transport émet le moins de CO2 ? Ce calculateur compare le vélo, la voiture, le train, l&#039;avion en fonction du nombre de kilomètres à réaliser.%0D%0Ahttps://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+                              rel="nofollow"
+                              title="Partager ce contenu par email"
+                              ><span class="sr-only"
+                                >Partager ce contenu par email</span
+                              ></a
+                            >
+                          </li>
+
+                          <li class="m-share-item">
+                            <a
+                              class="m-share-button icon-facebook"
+                              rel="nofollow"
+                              href="https://www.facebook.com/sharer/sharer.php?u=https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+                              target="_blank"
+                              title="Partager ce contenu sur Facebook"
+                            >
+                              <span class="sr-only"
+                                >Partager ce contenu sur Facebook</span
+                              ></a
+                            >
+                          </li>
+
+                          <li class="m-share-item">
+                            <a
+                              class="m-share-button icon-twitter"
+                              rel="nofollow"
+                              href="http://twitter.com/intent/tweet?text=Calculer les émissions de carbone de vos trajets+https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets"
+                              target="_blank"
+                              title="Partager ce contenu sur Twitter"
+                            >
+                              <span class="sr-only"
+                                >Partager ce contenu sur Twitter</span
+                              >
+                            </a>
+                          </li>
+
+                          <li class="m-share-item">
+                            <a
+                              class="m-share-button icon-linkedin"
+                              rel="nofollow"
+                              href="https://www.linkedin.com/shareArticle?mini=true&url=https://agirpourlatransition.ademe.fr/particuliers/calculer-emissions-carbone-trajets&title=Calculer les émissions de carbone de vos trajets&summary=Calculer les émissions de carbone de vos trajets&source=LinkedIn"
+                              target="_blank"
+                              title="Partager ce contenu sur LinkedIn"
+                            >
+                              <span class="sr-only"
+                                >Partager ce contenu sur LinkedIn</span
+                              >
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+
+                  <div
+                    class="modal fade modal--teaser-video"
+                    id="modalVideoTeaser"
+                    role="dialog"
+                    aria-labelledby="modalVideoLabelTeaser"
+                    aria-hidden="true"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="modal-dialog modal-xl modal-dialog-centered"
+                      role="document"
+                    >
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1
+                            class="modal-title sr-only"
+                            id="modalVideoLabelTeaser"
+                          >
+                            Video
+                          </h1>
+
+                          <button
+                            type="button"
+                            class="close btn-icon-left"
+                            data-dismiss="modal"
+                          >
+                            <span class="icon-close" aria-hidden="true"></span>
+                            <span class="sr-only">Fermer la modale</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div
+                            class="embed-responsive embed-responsive-16by9"
+                            id="o-teaser__iframe"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <aside role="complementary" class="o-aside">
+                    <div
+                      id="block-enjeux"
+                      class="o-aside-block o-aside-block--enjeux"
+                    >
+                      <div class="o-aside-block__content">
+                        <h2 class="o-aside-block__title">Grands enjeux</h2>
+
+                        <ul class="o-aside-block__list">
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/le-changement-climatique"
+                              >Le changement climatique</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/lenergie-en-france"
+                              >L&#039;énergie en France</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/la-pollution-de-lair"
+                              >La pollution de l&#039;air</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/les-sols-un-tresor-proteger"
+                              >Les sols, un trésor à protéger</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/transition-ecologique"
+                              >La transition écologique</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div
+                      id="block-conso"
+                      class="o-aside-block o-aside-block--conso"
+                    >
+                      <div class="o-aside-block__content">
+                        <h2 class="o-aside-block__title">
+                          Bons réflexes conso
+                        </h2>
+
+                        <ul class="o-aside-block__list">
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/labels-environnementaux"
+                              >Quel label choisir ?</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://longuevieauxobjets.gouv.fr"
+                              target="_blank"
+                              title="Comment allonger la durée de vie de mes objets ? (nouvelle fenêtre)"
+                              >Comment allonger la durée de vie de mes objets
+                              ?</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/que-faire-de-mes-dechets"
+                              >Que faire de mes déchets ?</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div
+                      id="block-faire"
+                      class="o-aside-block o-aside-block--faire"
+                    >
+                      <div class="o-aside-block__content">
+                        <h2 class="o-aside-block__title">Un projet réno ?</h2>
+
+                        <ul class="o-aside-block__list">
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://www.faire.gouv.fr/aides-de-financement"
+                              target="_blank"
+                              title="Parcourez les aides financières disponibles (nouvelle fenêtre)"
+                              >Parcourez les aides financières disponibles</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://www.faire.gouv.fr"
+                              target="_blank"
+                              title="Contactez un conseiller (nouvelle fenêtre)"
+                              >Contactez un conseiller</a
+                            >
+                          </li>
+                          <li class="o-aside-block__list-item">
+                            <a
+                              href="https://www.faire.gouv.fr/trouvez-un-professionnel"
+                              target="_blank"
+                              title="Trouvez un professionnel RGE pour vos travaux (nouvelle fenêtre)"
+                              >Trouvez un professionnel RGE pour vos travaux</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="o-aside-block o-aside-block--quiz">
+                      <a
+                        class="o-aside-block__content"
+                        href="https://agirpourlatransition.ademe.fr/particuliers/testez-vos-connaissances"
+                      >
+                        <h2 class="o-aside-block__title">
+                          Testez vos connaissances !
+                        </h2>
+                        <p class="o-aside-block__desc">Répondre aux quiz</p>
+                      </a>
+                    </div>
+                    <div class="o-aside-block o-aside-block--podcast">
+                      <a
+                        class="o-aside-block__content"
+                        href="https://agirpourlatransition.ademe.fr/particuliers/podcasts"
+                      >
+                        <h2 class="o-aside-block__title">
+                          Écouter nos podcasts
+                        </h2>
+                        <p class="o-aside-block__desc">C&#039;est parti</p>
+                      </a>
+                    </div>
+
+                    <div class="o-aside-zone--bg">
+                      <span
+                        data-big-pipe-placeholder-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_sommairedecontenu&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=d4hr9Z1r-MWx8quVCYYtMHNVTBhZkcRpHQ21KYZlOBk"
+                      ></span>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="block-crosscontent"
+            class="o-teasers o-teasers--actus-highlight-fullsize"
+          >
+            <div class="container">
+              <h2 class="o-teasers__title">Vous aimerez aussi</h2>
+
+              <div class="o-teasers__grid o-teasers--4by4">
+                <div class="o-teasers__item">
+                  <article
+                    data-history-node-id="13240"
+                    role="article"
+                    about="https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie/20-solutions-reduire-consommation-delectricite"
+                    class="
+                      node
+                      node--type-article
+                      node--promoted
+                      node--view-mode-runteaser
+                      o-teaser o-teaser--vertical
+                    "
+                  >
+                    <div class="o-teaser__img">
+                      <img
+                        src="/particuliers/sites/default/files/styles/550x330/public/2020-08/20_solutions_reduire_conso_elec.jpg?itok=Ui9ze2By"
+                        width="550"
+                        height="330"
+                        typeof="foaf:Image"
+                        class="image-style-_50x330"
+                        alt=""
+                      />
+                    </div>
+
+                    <div class="o-teaser__content">
+                      <h3 class="o-teaser__title">
+                        <a
+                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie/20-solutions-reduire-consommation-delectricite"
+                          >20 solutions pour réduire sa consommation
+                          d’électricité</a
+                        >
+                      </h3>
+
+                      <ul class="o-teaser__content-top">
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--tag"
+                            title="Économies d&#039;énergie"
+                          ></i>
+                          Économies d&#039;énergie
+                        </li>
+
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--date"
+                            title=""
+                          ></i
+                          >17 mai 2021
+                        </li>
+                      </ul>
+
+                      <div class="o-teaser__lead">
+                        <p>
+                          Chaque foyer français possède en moyenne une centaine
+                          d’appareils électriques et électroniques. Gaspillages,
+                          suréquipement, manque d’entretien… alourdissent la
+                          facture. Quelques gestes peuvent faire la différence.
+                        </p>
+                      </div>
+
+                      <div class="o-teaser__content-bottom">
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--share"
+                            title="Intentions de partages"
+                          ></i>
+                          <span class="sr-only">Intentions de partages</span>
+                          <span class="count">20496 partages</span>
+                        </p>
+
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--time"
+                            title="Durée de lecture : "
+                          ></i>
+                          <span class="sr-only">Durée de lecture : </span>
+                          6 minutes
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="o-teasers__item">
+                  <article
+                    data-history-node-id="451"
+                    role="article"
+                    about="/particuliers/maison/dechets/faire-dechets"
+                    class="
+                      node
+                      node--type-article
+                      node--promoted
+                      node--view-mode-runteaser
+                      o-teaser o-teaser--vertical
+                    "
+                  >
+                    <div class="o-teaser__img">
+                      <img
+                        src="/particuliers/sites/default/files/styles/550x330/public/2021-01/dechets-corbeille.gif?itok=hKifeAST"
+                        width="550"
+                        height="330"
+                        alt="Déchets dans une poubelle"
+                        typeof="foaf:Image"
+                        class="image-style-_50x330"
+                      />
+                    </div>
+
+                    <div class="o-teaser__content">
+                      <h3 class="o-teaser__title">
+                        <a
+                          href="https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/faire-dechets"
+                          >Que faire de mes déchets ?</a
+                        >
+                      </h3>
+
+                      <ul class="o-teaser__content-top">
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--tag"
+                            title="Déchets"
+                          ></i>
+                          Déchets
+                        </li>
+
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--date"
+                            title=""
+                          ></i
+                          >8 janvier 2021
+                        </li>
+                      </ul>
+
+                      <div class="o-teaser__lead">
+                        <p>
+                          Vous voulez vérifier si vous respectez bien les
+                          consignes de tri pour vos emballages, pots de peinture
+                          ou médicaments. Vous vous demandez où apporter vos
+                          appareils électriques, votre ordinateur ou vos
+                          vêtements. Toutes les réponses sont ici.
+                        </p>
+                      </div>
+
+                      <div class="o-teaser__content-bottom">
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--share"
+                            title="Intentions de partages"
+                          ></i>
+                          <span class="sr-only">Intentions de partages</span>
+                          <span class="count">2277 partages</span>
+                        </p>
+
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--time"
+                            title="Durée de lecture : "
+                          ></i>
+                          <span class="sr-only">Durée de lecture : </span>
+                          1 minute
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="o-teasers__item">
+                  <article
+                    data-history-node-id="447"
+                    role="article"
+                    about="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-a-renovation/transition-energetique-beneficiez-credit-dimpot-2020"
+                    class="
+                      node
+                      node--type-article
+                      node--promoted
+                      node--view-mode-runteaser
+                      o-teaser o-teaser--vertical
+                    "
+                  >
+                    <div class="o-teaser__img">
+                      <img
+                        src="/particuliers/sites/default/files/styles/550x330/public/2020-06/shutterstock_130170536.jpg?itok=mL7pPbuT"
+                        width="550"
+                        height="330"
+                        typeof="foaf:Image"
+                        class="image-style-_50x330"
+                        alt=""
+                      />
+                    </div>
+
+                    <div class="o-teaser__content">
+                      <h3 class="o-teaser__title">
+                        <a
+                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-a-renovation/transition-energetique-beneficiez-credit-dimpot-2020"
+                          >Transition énergétique : bénéficiez du crédit
+                          d&#039;impôt en 2020</a
+                        >
+                      </h3>
+
+                      <ul class="o-teaser__content-top">
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--tag"
+                            title="Aides à la rénovation"
+                          ></i>
+                          Aides à la rénovation
+                        </li>
+
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--date"
+                            title=""
+                          ></i
+                          >20 janvier 2021
+                        </li>
+                      </ul>
+
+                      <div class="o-teaser__lead">
+                        <p>
+                          Cette aide a pris fin le 31 décembre 2020. Elle a été
+                          remplacée par MaPrimeRénov&#039;. Pour mémoire,
+                          consultez ici les conditions 2020.
+                        </p>
+                      </div>
+
+                      <div class="o-teaser__content-bottom">
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--share"
+                            title="Intentions de partages"
+                          ></i>
+                          <span class="sr-only">Intentions de partages</span>
+                          <span class="count">5018 partages</span>
+                        </p>
+
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--time"
+                            title="Durée de lecture : "
+                          ></i>
+                          <span class="sr-only">Durée de lecture : </span>
+                          6 minutes
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="o-teasers__item">
+                  <article
+                    data-history-node-id="439"
+                    role="article"
+                    about="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-a-renovation/exoneration-taxe-fonciere"
+                    class="
+                      node
+                      node--type-article
+                      node--promoted
+                      node--view-mode-runteaser
+                      o-teaser o-teaser--vertical
+                    "
+                  >
+                    <div class="o-teaser__img">
+                      <img
+                        src="/particuliers/sites/default/files/styles/550x330/public/2020-06/exoneration_taxe_fonciere.jpg?itok=QNh5dWJh"
+                        width="550"
+                        height="330"
+                        typeof="foaf:Image"
+                        class="image-style-_50x330"
+                        alt=""
+                      />
+                    </div>
+
+                    <div class="o-teaser__content">
+                      <h3 class="o-teaser__title">
+                        <a
+                          href="https://agirpourlatransition.ademe.fr/particuliers/finances/aides-a-renovation/exoneration-taxe-fonciere"
+                          >Exonération de la taxe foncière</a
+                        >
+                      </h3>
+
+                      <ul class="o-teaser__content-top">
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--tag"
+                            title="Aides à la rénovation"
+                          ></i>
+                          Aides à la rénovation
+                        </li>
+
+                        <li class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--date"
+                            title=""
+                          ></i
+                          >27 janvier 2021
+                        </li>
+                      </ul>
+
+                      <div class="o-teaser__lead">
+                        <p>
+                          Si vous réalisez des travaux d&#039;économies
+                          d&#039;énergie dans votre logement, certaines
+                          collectivités (communes, départements…) peuvent vous
+                          exonérer temporairement de la taxe foncière. Découvrez
+                          les conditions pour bénéficier de cette exonération.
+                        </p>
+                      </div>
+
+                      <div class="o-teaser__content-bottom">
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--share"
+                            title="Intentions de partages"
+                          ></i>
+                          <span class="sr-only">Intentions de partages</span>
+                          <span class="count">4426 partages</span>
+                        </p>
+
+                        <p class="a-info">
+                          <i
+                            aria-hidden="true"
+                            class="a-info--time"
+                            title="Durée de lecture : "
+                          ></i>
+                          <span class="sr-only">Durée de lecture : </span>
+                          2 minutes
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <footer role="contentinfo" class="footer--principal">
+          <div class="container">
+            <div class="footer__top">
+              <div class="logo-wrapper">
+                <div class="logo--01">
+                  <img
+                    src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/logo-republique-francaise.svg"
+                    alt="République Française - Liberté Egalité Fraternité"
+                  />
+                </div>
+                <div class="logo--02">
+                  <a
+                    class="logo-link"
+                    href="https://agirpourlatransition.ademe.fr/particuliers/"
+                    title="Accueil de l'Ademe (Agence de la transition écologique)"
+                  >
+                    <img
+                      src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/logo-ademe.svg"
+                      alt="Ademe - Agence de la transition écologique"
+                    />
+                  </a>
+                </div>
+                <div class="logo--03">
+                  <img
+                    src="https://agirpourlatransition.ademe.fr/themes/custom/aw_particuliers/img/logo-france-relance.svg"
+                    alt="France relance"
+                  />
+                </div>
+              </div>
+
+              <span
+                data-big-pipe-placeholder-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_pieddepage&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=Jy8Uh32sqFJY6sXjmv0TfJthRwPN_EV3CIQriMFvWp0"
+              ></span>
+            </div>
+
+            <p class="footer__copyright text-center" title="1.6.0">
+              © 2020 ADEME - Tous droits réservés
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">
+      {
+        "path": {
+          "baseUrl": "\/particuliers\/",
+          "scriptPath": null,
+          "pathPrefix": "",
+          "currentPath": "node\/433",
+          "currentPathIsAdmin": false,
+          "isFront": false,
+          "currentLanguage": "fr"
+        },
+        "pluralDelimiter": "\u0003",
+        "suppressDeprecationErrors": true,
+        "ajaxPageState": {
+          "libraries": "aw_entity_browser\/override-admin,aw_particuliers\/dependencies-scripts,aw_particuliers\/global-scripts,aw_particuliers\/global-styling,big_pipe\/big_pipe,ckeditor_readmore\/ckeditor_readmore,classy\/base,classy\/messages,classy\/node,cool_message\/cool_message.library,core\/html5shiv,core\/normalize,paragraphs\/drupal.paragraphs.unpublished,pns_gtm\/datalayers.content,pns_gtm\/datalayers.global,pns_search\/autocomplete,pns_system\/pns_system,pns_system\/tarteaucitron_prod,social_media_links\/social_media_links.theme,statistics\/drupal.statistics,system\/base,views\/views.module",
+          "theme": "aw_particuliers",
+          "theme_token": null
+        },
+        "ajaxTrustedUrl": { "\/particuliers\/recherche": true },
+        "bigPipePlaceholderIds": {
+          "callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_pieddepage\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=Jy8Uh32sqFJY6sXjmv0TfJthRwPN_EV3CIQriMFvWp0": true,
+          "callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_sommairedecontenu\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=d4hr9Z1r-MWx8quVCYYtMHNVTBhZkcRpHQ21KYZlOBk": true,
+          "callback=flag.link_builder%3Abuild\u0026args%5B0%5D=node\u0026args%5B1%5D=433\u0026args%5B2%5D=share\u0026token=d5YWAXBtiK3OYnsWFgjLYTFpbXZZyOYXHIvUZPsxdP8": true,
+          "callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages\u0026args%5B0%5D\u0026token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA": true,
+          "callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_menuducomptedelutilisateur\u0026args%5B1%5D\u0026args%5B2%5D\u0026token=WeHpzNmfqGDU7lgld6-_o1rwBPC5FV7TuH_bM6pG8WA": true,
+          "callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_menuducomptedelutilisateur\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=0MQtXvxq3yJWm0ldOygYWO-i5zcTNvVfrFolQZpq3NE": true
+        },
+        "currentSite": "aw_particuliers",
+        "user": {
+          "status": "non_connecte",
+          "uid": 0,
+          "permissionsHash": "00ffff8a00d335eda64131d593ac9898acfae09febfdc78080539b94cb69745f"
+        },
+        "pageTitle": "calculer_les_emissions_de_carbone_de_vos_trajets",
+        "contentType": "article",
+        "isFront": false,
+        "statistics": {
+          "data": { "nid": "433" },
+          "url": "\/particuliers\/core\/modules\/statistics\/statistics.php"
+        }
+      }
+    </script>
+    <script src="/particuliers/sites/default/files/js/js_8KhkDFhFRywpp8FPyGqQJ20KbpJcTJOtBKKn7zWl6M8.js"></script>
+    <script src="/particuliers/sites/default/files/js/js_XaZnNGLKWIjIi_oTglPtnHBto43IWPp4_8pUkpIP0QI.js"></script>
+    <script src="//tarteaucitron.io/load.js?domain=agirpourlatransition.ademe.fr&amp;uuid=2df1000bf385655312abede8e30421664e7d594e"></script>
+    <script src="/particuliers/sites/default/files/js/js_qM3KaO3_VEFIcTwdEQnr7J62sSYRNTrjicyzb6NsJ7Q.js"></script>
+    <script src="/particuliers/sites/default/files/js/js_mlgrF3Unb2Wb0bDdDlDmb5U2dRU-XfkAI7MHOaP-w4A.js"></script>
+
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-event="start"
+    ></script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_menuducomptedelutilisateur&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=0MQtXvxq3yJWm0ldOygYWO-i5zcTNvVfrFolQZpq3NE"
+    >
+      [{"command":"settings","settings":{"ajaxPageState":{"theme":"aw_particuliers","libraries":"aw_entity_browser\/override-admin,aw_particuliers\/dependencies-scripts,aw_particuliers\/global-scripts,aw_particuliers\/global-styling,big_pipe\/big_pipe,ckeditor_readmore\/ckeditor_readmore,classy\/base,classy\/messages,classy\/node,cool_message\/cool_message.library,core\/html5shiv,core\/normalize,paragraphs\/drupal.paragraphs.unpublished,pns_gtm\/datalayers.content,pns_gtm\/datalayers.global,pns_search\/autocomplete,pns_system\/pns_system,pns_system\/tarteaucitron_prod,social_media_links\/social_media_links.theme,statistics\/drupal.statistics,system\/base,views\/views.module"},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"00ffff8a00d335eda64131d593ac9898acfae09febfdc78080539b94cb69745f"}},"merge":true},{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_menuducomptedelutilisateur\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=0MQtXvxq3yJWm0ldOygYWO-i5zcTNvVfrFolQZpq3NE\u0022]","data":"  \n\u003Cdiv class=\u0022header-right\u0022\u003E\n                        \u003Ca class=\u0022btn header-btn\u0022 href=\u0022\/particuliers\/user\/register\u0022\u003ECr\u00e9er mon compte\u003C\/a\u003E\n        \n                    \u003Cform class=\u0022openid-connect-login-form\u0022 data-drupal-selector=\u0022openid-connect-login-form\u0022 novalidate=\u0022novalidate\u0022 action=\u0022\/particuliers\/calculer-emissions-carbone-trajets\u0022 method=\u0022post\u0022 id=\u0022openid-connect-login-form\u0022 accept-charset=\u0022UTF-8\u0022\u003E\n  \u003Cdiv class=\u0022from-login-custom\u0022\u003E            \u003Cbutton class=\u0022btn header-btn\u0022\u003E\n                Se connecter\n            \u003C\/button\u003E\n        \n\u003C\/div\u003E\u003Cinput autocomplete=\u0022off\u0022 data-drupal-selector=\u0022form-4s0umm5ypnldnauumhczfid15-7zz2hcciyyphurerq\u0022 type=\u0022hidden\u0022 name=\u0022form_build_id\u0022 value=\u0022form-4S0UMm5YpnldNaUumhCZfiD15-7Zz2hCciyypHUrErQ\u0022 class=\u0022form-control\u0022 \/\u003E\n\u003Cinput data-drupal-selector=\u0022edit-openid-connect-login-form\u0022 type=\u0022hidden\u0022 name=\u0022form_id\u0022 value=\u0022openid_connect_login_form\u0022 class=\u0022form-control\u0022 \/\u003E\n\n\u003C\/form\u003E\n\n            \u003C\/div\u003E\n\n","settings":null}]
+    </script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_menuducomptedelutilisateur&amp;args%5B1%5D&amp;args%5B2%5D&amp;token=WeHpzNmfqGDU7lgld6-_o1rwBPC5FV7TuH_bM6pG8WA"
+    >
+      [{"command":"settings","settings":{"ajaxPageState":{"theme":"aw_particuliers","libraries":"aw_entity_browser\/override-admin,aw_particuliers\/dependencies-scripts,aw_particuliers\/global-scripts,aw_particuliers\/global-styling,big_pipe\/big_pipe,ckeditor_readmore\/ckeditor_readmore,classy\/base,classy\/messages,classy\/node,cool_message\/cool_message.library,core\/html5shiv,core\/normalize,paragraphs\/drupal.paragraphs.unpublished,pns_gtm\/datalayers.content,pns_gtm\/datalayers.global,pns_search\/autocomplete,pns_system\/pns_system,pns_system\/tarteaucitron_prod,social_media_links\/social_media_links.theme,statistics\/drupal.statistics,system\/base,views\/views.module"},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"00ffff8a00d335eda64131d593ac9898acfae09febfdc78080539b94cb69745f"}},"merge":true},{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_menuducomptedelutilisateur\u0026args%5B1%5D\u0026args%5B2%5D\u0026token=WeHpzNmfqGDU7lgld6-_o1rwBPC5FV7TuH_bM6pG8WA\u0022]","data":"  \n\u003Cdiv class=\u0022header-right\u0022\u003E\n                        \u003Ca class=\u0022btn header-btn\u0022 href=\u0022\/particuliers\/user\/register\u0022\u003ECr\u00e9er mon compte\u003C\/a\u003E\n        \n                    \u003Cform class=\u0022openid-connect-login-form\u0022 data-drupal-selector=\u0022openid-connect-login-form-2\u0022 novalidate=\u0022novalidate\u0022 action=\u0022\/particuliers\/calculer-emissions-carbone-trajets\u0022 method=\u0022post\u0022 id=\u0022openid-connect-login-form--2\u0022 accept-charset=\u0022UTF-8\u0022\u003E\n  \u003Cdiv class=\u0022from-login-custom\u0022\u003E            \u003Cbutton class=\u0022btn header-btn\u0022\u003E\n                Se connecter\n            \u003C\/button\u003E\n        \n\u003C\/div\u003E\u003Cinput autocomplete=\u0022off\u0022 data-drupal-selector=\u0022form-zqcpeslhu1agb82lrwopcc2677ahkq0cvw6tbewd8zc\u0022 type=\u0022hidden\u0022 name=\u0022form_build_id\u0022 value=\u0022form-ZqcpeSlhu1agb82LRwOPcc2677AhKQ0Cvw6TbEwD8zc\u0022 class=\u0022form-control\u0022 \/\u003E\n\u003Cinput data-drupal-selector=\u0022edit-openid-connect-login-form-2\u0022 type=\u0022hidden\u0022 name=\u0022form_id\u0022 value=\u0022openid_connect_login_form\u0022 class=\u0022form-control\u0022 \/\u003E\n\n\u003C\/form\u003E\n\n            \u003C\/div\u003E\n\n","settings":null}]
+    </script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-replacement-for-placeholder-with-id="callback=flag.link_builder%3Abuild&amp;args%5B0%5D=node&amp;args%5B1%5D=433&amp;args%5B2%5D=share&amp;token=d5YWAXBtiK3OYnsWFgjLYTFpbXZZyOYXHIvUZPsxdP8"
+    >
+      [{"command":"settings","settings":{"ajaxPageState":{"theme":"aw_particuliers","libraries":"aw_entity_browser\/override-admin,aw_particuliers\/dependencies-scripts,aw_particuliers\/global-scripts,aw_particuliers\/global-styling,big_pipe\/big_pipe,ckeditor_readmore\/ckeditor_readmore,classy\/base,classy\/messages,classy\/node,cool_message\/cool_message.library,core\/html5shiv,core\/normalize,flag\/flag.link,flag\/flag.link_ajax,paragraphs\/drupal.paragraphs.unpublished,pns_gtm\/datalayers.content,pns_gtm\/datalayers.global,pns_search\/autocomplete,pns_system\/pns_system,pns_system\/tarteaucitron_prod,social_media_links\/social_media_links.theme,statistics\/drupal.statistics,system\/base,views\/views.module"},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"00ffff8a00d335eda64131d593ac9898acfae09febfdc78080539b94cb69745f"}},"merge":true},{"command":"add_css","data":"\u003Clink rel=\u0022stylesheet\u0022 media=\u0022all\u0022 href=\u0022\/particuliers\/sites\/default\/files\/css\/css_WphzX1ov0undbutI_G7c2yzFUNbwCW3z03RcRKEZp-k.css\u0022 \/\u003E\n\u003Clink rel=\u0022stylesheet\u0022 media=\u0022all\u0022 href=\u0022\/particuliers\/sites\/default\/files\/css\/css_U3_4xyKRhFD4Gm2kLs6PPE7qnmb7879lz6GVorhnzkM.css\u0022 \/\u003E\n"},{"command":"insert","method":"append","selector":"body","data":"\u003Cscript src=\u0022\/particuliers\/sites\/default\/files\/js\/js_a3GIVuGTNqG1XWI21HD3ECJPyNtrSsgmTMpr9p2eNvk.js\u0022\u003E\u003C\/script\u003E\n","settings":null},{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=flag.link_builder%3Abuild\u0026args%5B0%5D=node\u0026args%5B1%5D=433\u0026args%5B2%5D=share\u0026token=d5YWAXBtiK3OYnsWFgjLYTFpbXZZyOYXHIvUZPsxdP8\u0022]","data":"\u003Cdiv class=\u0022flag flag-share js-flag-share-433 action-flag hidden\u0022 data-count=\u0022867\u0022\u003E\u003Ca title=\u0022\u0022 href=\u0022\/particuliers\/flag\/flag\/share\/433?destination\u0026amp;token=ywIJQUWPRbWGQ1XtnCJ7mFSJq7b7Uk5jBY-6xwQ4Gwo\u0022 class=\u0022use-ajax\u0022 rel=\u0022nofollow\u0022\u003EShare\u003C\/a\u003E\u003Cspan\u003E\n                  867 partages            \u003C\/span\u003E\u003C\/div\u003E","settings":null}]
+    </script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_sommairedecontenu&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=d4hr9Z1r-MWx8quVCYYtMHNVTBhZkcRpHQ21KYZlOBk"
+    >
+      [{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_sommairedecontenu\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=d4hr9Z1r-MWx8quVCYYtMHNVTBhZkcRpHQ21KYZlOBk\u0022]","data":"","settings":null}]
+    </script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=aw_particuliers_pieddepage&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=Jy8Uh32sqFJY6sXjmv0TfJthRwPN_EV3CIQriMFvWp0"
+    >
+      [{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=aw_particuliers_pieddepage\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=Jy8Uh32sqFJY6sXjmv0TfJthRwPN_EV3CIQriMFvWp0\u0022]","data":"  \u003Cdiv class=\u0022footer__nav\u0022\u003E\n            \u003Cul class=\u0022footer__list\u0022\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003C\/li\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003Ca href=\u0022\/particuliers\/particuliers\/bureau\u0022\u003EAu bureau\u003C\/a\u003E\u003C\/li\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003Ca href=\u0022\/particuliers\/particuliers\/conso\u0022\u003EConso\u003C\/a\u003E\u003C\/li\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003Ca href=\u0022\/particuliers\/particuliers\/maison\u0022\u003EMaison\u003C\/a\u003E\u003C\/li\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003Ca href=\u0022\/particuliers\/particuliers\/parents\u0022\u003EParents\u003C\/a\u003E\u003C\/li\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003Ca href=\u0022\/particuliers\/particuliers\/vacances-loisirs\u0022\u003EVacances et loisirs\u003C\/a\u003E\u003C\/li\u003E\n                            \u003Cli class=\u0022footer__list-item\u0022\u003E\u003Ca href=\u0022\/particuliers\/particuliers\/finances\u0022\u003EFinances\u003C\/a\u003E\u003C\/li\u003E\n                    \u003C\/ul\u003E\n    \n                            \u003Cul  data-region=\u0022footer_zone1\u0022 block=\u0022block-aw-particuliers-pieddepage\u0022 class=\u0022footer__list\u0022\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022\/particuliers\/politique-protection-donnees-a-caractere-personnel\u0022 data-drupal-link-system-path=\u0022node\/7\u0022\u003EProtection des donn\u00e9es\u003C\/a\u003E\n                          \u003C\/li\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022\/particuliers\/conditions-generales-dutilisation\u0022 data-drupal-link-system-path=\u0022node\/5\u0022\u003ECGU\u003C\/a\u003E\n                          \u003C\/li\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022\/particuliers\/accessibilite\u0022 data-drupal-link-system-path=\u0022node\/10181\u0022\u003EPolitique d\u0026#039;accessibilit\u00e9\u003C\/a\u003E\n                          \u003C\/li\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022\/particuliers\/mentions-legales\u0022 data-drupal-link-system-path=\u0022node\/6\u0022\u003EMentions l\u00e9gales\u003C\/a\u003E\n                          \u003C\/li\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022https:\/\/ademe.signalement.net\/\u0022\u003EPortail de signalement\u003C\/a\u003E\n                          \u003C\/li\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022\/particuliers\/plan-site\u0022 data-drupal-link-system-path=\u0022plan-site\u0022\u003EPlan du site\u003C\/a\u003E\n                          \u003C\/li\u003E\n                                  \u003Cli class=\u0022menu-item menu-footer-item\u0022\u003E\n              \u003Ca href=\u0022#tarteaucitron\u0022\u003ECookies\u003C\/a\u003E\n                          \u003C\/li\u003E\n                  \u003C\/ul\u003E\n          \n    \u003C\/div\u003E\n\n","settings":null}]
+    </script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages&amp;args%5B0%5D&amp;token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA"
+    >
+      [{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages\u0026args%5B0%5D\u0026token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA\u0022]","data":"","settings":null}]
+    </script>
+    <script
+      type="application/vnd.drupal-ajax"
+      data-big-pipe-event="stop"
+    ></script>
+    <script type="text/javascript">
+      window.NREUM || (NREUM = {})
+      NREUM.info = {
+        beacon: 'bam-cell.nr-data.net',
+        licenseKey: '762c6260b9',
+        applicationID: '392310830',
+        transactionName:
+          'ZQFaYkAFDUAFUUBQXVxLeVVGDQxdS3ZGTEJTCGRYXQAGbyddWk1AXQhUU0A4LVwAV2JQV0UnV1hGFgxfCFdGFAxEDV1B',
+        queueTime: 0,
+        applicationTime: 810,
+        atts: 'SUZZFAgfHk4=',
+        errorBeacon: 'bam-cell.nr-data.net',
+        agent: '',
+      }
+    </script>
+  </body>
+</html>

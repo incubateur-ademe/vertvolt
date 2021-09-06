@@ -37,7 +37,7 @@ export default function Offre(props) {
   return (
     <Card list>
       <Card.Columns>
-        <Card.Column>
+        <Card.Column flex>
           <Label label={props.offre.niveau_labelisation} />
           <TitleLink
             href={`/#${props.offre.nom_offre}`}

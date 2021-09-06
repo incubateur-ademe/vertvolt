@@ -48,7 +48,7 @@ Card.Columns = styled.div`
   }
 `
 Card.Column = styled.div`
-  flex: 1;
+  flex: ${(props) => (props.flex ? 'auto' : 1)};
   display: flex;
   flex-direction: column;
   justify-content: ${(props) => (props.list ? 'space-between' : 'flex-start')};

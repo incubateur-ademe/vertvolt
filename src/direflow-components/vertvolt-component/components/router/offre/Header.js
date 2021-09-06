@@ -27,7 +27,7 @@ const Description = styled.p`
 export default function Header(props) {
   return (
     <Wrapper>
-      <Card.Column>
+      <Card.Column flex>
         <Label label={props.offre.niveau_labelisation} />
         <Title>{props.offre.nom_offre}</Title>
         <Description>

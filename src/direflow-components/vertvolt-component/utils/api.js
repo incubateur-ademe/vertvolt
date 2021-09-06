@@ -150,7 +150,7 @@ export function useOffre(offre) {
               (acc, cur) =>
                 acc +
                 cur.technologies.reduce(
-                  (acc2, cur2) => acc2 + cur2.mwh_offre,
+                  (acc2, cur2) => acc2 + cur2.mwh_gouvernance_partagee,
                   0
                 ),
               0
@@ -159,7 +159,7 @@ export function useOffre(offre) {
               (acc, cur) =>
                 acc +
                 cur.technologies.reduce(
-                  (acc2, cur2) => acc2 + cur2.mwh_offre,
+                  (acc2, cur2) => acc2 + cur2.mwh_sans_soutien_public,
                   0
                 ),
               0

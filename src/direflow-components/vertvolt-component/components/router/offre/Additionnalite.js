@@ -34,12 +34,19 @@ export default function Additionnalite(props) {
             />
           </Card.Column>
           <Card.Column>
-            <Total offre={props.offre} value={'mwh_sans_soutien_public'} />
+            <Total
+              offre={props.offre}
+              value={'mwh_sans_soutien_public'}
+              current={current}
+              setCurrent={setCurrent}
+            />
             {props.offre.regions.map((region) => (
               <Region
                 key={region.region}
                 region={region}
                 value={'mwh_sans_soutien_public'}
+                current={current}
+                setCurrent={setCurrent}
               />
             ))}
           </Card.Column>
@@ -67,12 +74,19 @@ export default function Additionnalite(props) {
             />
           </Card.Column>
           <Card.Column>
-            <Total offre={props.offre} value={'mwh_gouvernance_partagee'} />
+            <Total
+              offre={props.offre}
+              value={'mwh_gouvernance_partagee'}
+              current={current}
+              setCurrent={setCurrent}
+            />
             {props.offre.regions.map((region) => (
               <Region
                 key={region.region}
                 region={region}
                 value={'mwh_gouvernance_partagee'}
+                current={current}
+                setCurrent={setCurrent}
               />
             ))}
           </Card.Column>

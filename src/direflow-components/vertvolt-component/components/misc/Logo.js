@@ -13,6 +13,11 @@ const Wrapper = styled.div`
   text-align: center;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.label[props.label]};
+  background: linear-gradient(
+    45deg,
+    ${(props) => props.theme.colors.label[props.label]} 0%,
+    rgba(148, 195, 86, 1) 100%
+  );
   border-radius: ${(props) => (props.small ? 6 : 12)}rem 0
     ${(props) => (props.small ? 6 : 12)}rem 0;
   ${(props) => props.theme.mq.small} {
@@ -22,7 +27,8 @@ const Wrapper = styled.div`
 export default function Logo(props) {
   return (
     <Wrapper small={props.small} label={props.label}>
-      {props.label}
+      {props.label.includes('très') ? 'Très Engagé' : 'Engagé'}{' '}
+      {props.label.includes('ARENH') && 'Sans Nucléaire'}
     </Wrapper>
   )
 }

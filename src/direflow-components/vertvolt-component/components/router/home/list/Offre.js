@@ -7,7 +7,7 @@ import Fournisseur from '../../../misc/Fournisseur'
 import Label from '../../../misc/Label'
 import Logo from '../../../misc/Logo'
 
-const Link = styled.a`
+const TitleLink = styled.a`
   text-decoration: none;
 
   &:hover {
@@ -26,6 +26,11 @@ const Description = styled.p`
     color: ${(props) => props.theme.colors.main};
   }
 `
+const Link = styled.a`
+  ${(props) => props.theme.mq.small} {
+    margin-top: 1.6rem;
+  }
+`
 export default function Offre(props) {
   const { setCurrentOffre } = useContext(SearchContext)
   return (
@@ -33,7 +38,7 @@ export default function Offre(props) {
       <Card.Columns>
         <Card.Column>
           <Label label={props.offre.niveau_labelisation} />
-          <Link
+          <TitleLink
             href={`/#${props.offre.nom_offre}`}
             onClick={(e) => {
               e.preventDefault()
@@ -43,7 +48,7 @@ export default function Offre(props) {
             <Title onClick={() => setCurrentOffre(props.offre.nom_offre)}>
               {props.offre.nom_offre}
             </Title>
-          </Link>
+          </TitleLink>
           <Description>
             Electricité 100 % verte - <span>{props.offre.statut_offre}</span>
           </Description>
@@ -51,7 +56,7 @@ export default function Offre(props) {
         </Card.Column>
         <Card.Column right>
           <Logo label={props.offre.niveau_labelisation} small />
-          <a
+          <Link
             href={`/#${props.offre.nom_offre}`}
             onClick={(e) => {
               e.preventDefault()
@@ -59,7 +64,7 @@ export default function Offre(props) {
             }}
           >
             En savoir plus
-          </a>
+          </Link>
         </Card.Column>
       </Card.Columns>
     </Card>

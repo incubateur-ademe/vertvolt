@@ -27,7 +27,7 @@ export default function Map(props) {
       : 0
 
   return (
-    <Wrapper width='844' height='1198' viewBox='0 0 844 1198'>
+    <Wrapper width='844' height='900' viewBox='0 0 844 900'>
       <Region
         onClick={() => props.setCurrent('Corse')}
         percent={getPercent(props.offre, props.value, 'Corse')}

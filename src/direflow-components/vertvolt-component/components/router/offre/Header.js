@@ -10,10 +10,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
 `
 const Title = styled.h2`
   margin-bottom: 1rem;
-  font-size: 3.2rem;
+  font-size: 3rem;
 `
 const Description = styled.p`
   margin-bottom: 2.4rem;

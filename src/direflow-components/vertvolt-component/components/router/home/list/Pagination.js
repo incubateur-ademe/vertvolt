@@ -31,7 +31,7 @@ const Next = styled.button`
   }
 `
 export default function Pagination(props) {
-  return (
+  return Math.ceil(props.results.length / props.offresPerPage) > 1 ? (
     <Wrapper>
       <Summary>
         Résultats {props.currentPage * props.offresPerPage}-
@@ -62,5 +62,5 @@ export default function Pagination(props) {
         </Next>
       </Pages>
     </Wrapper>
-  )
+  ) : null
 }

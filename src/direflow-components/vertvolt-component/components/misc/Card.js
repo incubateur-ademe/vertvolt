@@ -10,6 +10,7 @@ const Card = styled.div`
 Card.Table = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 -1.6rem;
   padding: 1.6rem;
   border-top: 0.1rem solid ${(props) => props.theme.colors.mainLight};
@@ -30,14 +31,21 @@ Card.Table = styled.div`
       props.theme.colors[props.onClick ? 'mainLight' : 'transparent']};
   }
 `
-Card.Label = styled.div``
+Card.Label = styled.div`
+  margin-right: 1.6rem;
+`
 Card.Number = styled.div`
   font-weight: bold;
   text-align: right;
+  white-space: nowrap;
 `
 Card.Columns = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
 `
 Card.Column = styled.div`
   flex: 1;

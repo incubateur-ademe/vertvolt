@@ -15,7 +15,7 @@ const Wrapper = styled.nav`
 `
 export default function Search() {
   return (
-    <Wrapper data-tip='hello world'>
+    <Wrapper>
       <Offre />
       <Fournisseur />
       <Label />

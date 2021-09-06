@@ -1,6 +1,6 @@
 export default function (technologie) {
   const labels = {
-    'Mécanique/Hydraulique et Marine': 'Hydroélectricité et énergies margines',
+    'Mécanique/Hydraulique et Marine': 'Hydroélectricité et énergies marines',
     'Mécanique/Vent': 'Eolien',
     'Chaleur/Géothermique': 'Géothermie',
     'Chaleur/Solaire': 'Photovoltaïque',

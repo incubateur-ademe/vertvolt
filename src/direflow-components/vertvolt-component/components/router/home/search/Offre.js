@@ -13,6 +13,12 @@ const Wrapper = styled.input`
   background-color: ${(props) => props.theme.colors.input};
   border: 0.1rem solid ${(props) => props.theme.colors.input};
   border-radius: 0.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex: auto;
+    width: 100%;
+    margin-bottom: 1.6rem;
+  }
 `
 export default function Offre() {
   const { search, setSearch } = useContext(SearchContext)

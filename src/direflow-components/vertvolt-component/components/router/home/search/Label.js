@@ -6,6 +6,11 @@ import SearchContext from '../../../../utils/SearchContext'
 const Wrapper = styled.select`
   flex: 1;
   margin: 0 0.8rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex: auto;
+    width: 100%;
+  }
 `
 export default function Label() {
   const { label, setLabel } = useContext(SearchContext)

@@ -8,6 +8,10 @@ import Label from './search/Label'
 const Wrapper = styled.nav`
   display: flex;
   margin: 0 -0.8rem 4rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-wrap: wrap;
+  }
 `
 export default function Search() {
   return (

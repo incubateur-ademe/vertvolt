@@ -11,14 +11,14 @@ export default function Region(props) {
         current={props.current === props.region.region}
       >
         <th>{props.region.region}</th>
-        <Table.Total>{props.region[`total_${props.value}`]} KWh</Table.Total>
+        <Table.Total>{props.region[`total_${props.value}`]} MWh</Table.Total>
       </Table.Header>
       {props.current === props.region.region &&
         props.region.technologies.map((technologie) =>
           technologie[props.value] ? (
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
-              <Table.Value>{technologie[props.value]} KWh</Table.Value>
+              <Table.Value>{technologie[props.value]} MWh</Table.Value>
             </Table.Technologie>
           ) : null
         )}

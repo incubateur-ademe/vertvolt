@@ -11,7 +11,7 @@ export default function Total(props) {
         current={props.current === 'total'}
       >
         <th>Total</th>
-        <Table.Total>{props.offre.total[props.value]} KWh</Table.Total>
+        <Table.Total>{props.offre.total[props.value]} MWh</Table.Total>
       </Table.Header>
       {props.current === 'total' &&
         props.offre.technologies.map((technologie) =>
@@ -19,7 +19,7 @@ export default function Total(props) {
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
               <Table.Value>
-                {technologie[`total_${props.value}`]} KWh
+                {technologie[`total_${props.value}`]} MWh
               </Table.Value>
             </Table.Technologie>
           ) : null

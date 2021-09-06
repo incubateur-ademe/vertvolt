@@ -54,7 +54,7 @@ export default function Offre(props) {
           </Description>
           <Fournisseur offre={props.offre} small />
         </Card.Column>
-        <Card.Column right>
+        <Card.Column right list>
           <Logo label={props.offre.niveau_labelisation} small />
           <Link
             href={`/#${props.offre.nom_offre}`}

@@ -51,7 +51,7 @@ Card.Column = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: ${(props) => (props.list ? 'space-between' : 'flex-start')};
   align-items: ${(props) => (props.right ? 'flex-end' : 'flex-start')};
 `
 Card.Title = styled.h4`

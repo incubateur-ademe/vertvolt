@@ -47,7 +47,7 @@ export default function List() {
       )
     }
   }, [fuse, search, data, fournisseur, label])
-  console.log(results)
+
   return results ? (
     <div>
       <div>

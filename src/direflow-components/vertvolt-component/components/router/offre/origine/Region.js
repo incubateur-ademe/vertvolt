@@ -4,7 +4,7 @@ import setLabelTechnologie from '../../../../utils/setLabelTechnologie'
 import Table from '../../../misc/Table'
 
 export default function Region(props) {
-  return (
+  return props.region[`total_${props.value}`] ? (
     <Table>
       <Table.Header
         onClick={() => props.setCurrent(props.region.region)}
@@ -14,12 +14,14 @@ export default function Region(props) {
         <Table.Total>{props.region[`total_${props.value}`]} KWh</Table.Total>
       </Table.Header>
       {props.current === props.region.region &&
-        props.region.technologies.map((technologie) => (
-          <Table.Technologie key={technologie.technologie}>
-            <td>{setLabelTechnologie(technologie.technologie)}</td>
-            <Table.Value>{technologie[props.value]} KWh</Table.Value>
-          </Table.Technologie>
-        ))}
+        props.region.technologies.map((technologie) =>
+          technologie[props.value] ? (
+            <Table.Technologie key={technologie.technologie}>
+              <td>{setLabelTechnologie(technologie.technologie)}</td>
+              <Table.Value>{technologie[props.value]} KWh</Table.Value>
+            </Table.Technologie>
+          ) : null
+        )}
     </Table>
-  )
+  ) : null
 }

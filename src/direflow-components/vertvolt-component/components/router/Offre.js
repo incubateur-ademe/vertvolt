@@ -11,6 +11,7 @@ import Details from './offre/Details'
 export default function Offre() {
   const { currentOffre } = useContext(SearchContext)
   const { data } = useOffre(currentOffre)
+
   return data ? (
     <>
       <BackButton />

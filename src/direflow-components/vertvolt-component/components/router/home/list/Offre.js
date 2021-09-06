@@ -6,6 +6,7 @@ import Card from '../../../misc/Card'
 import Fournisseur from '../../../misc/Fournisseur'
 import Label from '../../../misc/Label'
 import Logo from '../../../misc/Logo'
+import Tooltip from '../../../misc/Tooltip'
 
 const TitleLink = styled.a`
   text-decoration: none;
@@ -50,7 +51,12 @@ export default function Offre(props) {
             </Title>
           </TitleLink>
           <Description>
-            Electricité 100 % verte - <span>{props.offre.statut_offre}</span>
+            Electricité 100 % verte -{' '}
+            <Tooltip
+              tip={`Déclaratif : Les données présentées sont des données déclarées par le fournisseur,<br/>le fournisseur s'engage à respecter ces données mais aucun audit n'a encore eu lieu.`}
+            >
+              {props.offre.statut_offre}
+            </Tooltip>
           </Description>
           <Fournisseur offre={props.offre} small />
         </Card.Column>

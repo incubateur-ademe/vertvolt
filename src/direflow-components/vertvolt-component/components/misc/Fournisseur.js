@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Card from './Card'
+import Tooltip from './Tooltip'
 
 const Wrapper = styled.div`
   padding: 1.2rem 1.6rem;
@@ -11,10 +12,6 @@ const Wrapper = styled.div`
 const Content = styled.p`
   margin: 0;
   font-size: ${(props) => (props.small ? 1.2 : 1.4)}rem;
-
-  span {
-    color: ${(props) => props.theme.colors.main};
-  }
 `
 export default function Fournisseur(props) {
   return (
@@ -27,8 +24,18 @@ export default function Fournisseur(props) {
           ? 'Fait appel à l’ARENH.'
           : 'Ne fait pas appel à l’ARENH.'}
         <br />
-        <span>{props.offre.clients_offre_labelisee * 100} %</span> de ses
-        clients ont souscrit à une <span>offre labelisée VertVolt</span>
+        <Tooltip
+          tip={`Pourcentage des clients du fournisseur commercialisant cette offre qui ont souscrit à cette offre,<br/>ou à une autre offre de ce fournisseur labellisée VertVolt.`}
+          noSup
+        >
+          {props.offre.clients_offre_labelisee * 100} %
+        </Tooltip>{' '}
+        de ses clients ont souscrit à une{' '}
+        <Tooltip
+          tip={`Pourcentage des clients du fournisseur commercialisant cette offre qui ont souscrit à cette offre,<br/>ou à une autre offre de ce fournisseur labellisée VertVolt.`}
+        >
+          offre labelisée VertVolt
+        </Tooltip>
       </Content>
     </Wrapper>
   )

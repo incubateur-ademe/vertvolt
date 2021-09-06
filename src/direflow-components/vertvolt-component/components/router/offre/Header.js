@@ -5,6 +5,7 @@ import Fournisseur from '../../misc/Fournisseur'
 import Card from '../../misc/Card'
 import Label from '../../misc/Label'
 import Logo from '../../misc/Logo'
+import Tooltip from '../../misc/Tooltip'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,10 +23,6 @@ const Title = styled.h2`
 const Description = styled.p`
   margin-bottom: 2.4rem;
   font-size: 1.6rem;
-
-  span {
-    color: ${(props) => props.theme.colors.main};
-  }
 `
 export default function Header(props) {
   return (
@@ -34,7 +31,12 @@ export default function Header(props) {
         <Label label={props.offre.niveau_labelisation} />
         <Title>{props.offre.nom_offre}</Title>
         <Description>
-          Electricité 100 % verte - <span>{props.offre.statut_offre}</span>
+          Electricité 100 % verte -{' '}
+          <Tooltip
+            tip={`Déclaratif : Les données présentées sont des données déclarées par le fournisseur, le fournisseur s'engage à respecter ces données mais aucun audit n'a encore eu lieu.`}
+          >
+            {props.offre.statut_offre}
+          </Tooltip>
         </Description>
         <Fournisseur offre={props.offre} />
       </Card.Column>

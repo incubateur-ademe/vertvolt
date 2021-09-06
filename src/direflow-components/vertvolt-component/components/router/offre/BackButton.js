@@ -35,7 +35,7 @@ export default function BackButton() {
 
   return (
     <Wrapper onClick={() => setCurrentOffre(null)}>
-      Voir la liste des offres
+      Retourner à la liste des offres
     </Wrapper>
   )
 }

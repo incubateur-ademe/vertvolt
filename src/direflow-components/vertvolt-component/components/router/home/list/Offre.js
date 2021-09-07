@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import setTooltipStatutOffre from '../../../../utils/setTooltipStatutOffre'
 import SearchContext from '../../../../utils/SearchContext'
 import Card from '../../../misc/Card'
 import Fournisseur from '../../../misc/Fournisseur'
@@ -52,9 +53,7 @@ export default function Offre(props) {
           </TitleLink>
           <Description>
             Electricité 100 % verte -{' '}
-            <Tooltip
-              tip={`Déclaratif : Les données présentées sont des données déclarées par le fournisseur,<br/>le fournisseur s'engage à respecter ces données mais aucun audit n'a encore eu lieu.`}
-            >
+            <Tooltip tip={setTooltipStatutOffre(props.offre.statut_offre)}>
               {props.offre.statut_offre}
             </Tooltip>
           </Description>

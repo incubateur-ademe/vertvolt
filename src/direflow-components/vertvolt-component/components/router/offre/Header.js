@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import setTooltipStatutOffre from '../../../utils/setTooltipStatutOffre'
 import Fournisseur from '../../misc/Fournisseur'
 import Card from '../../misc/Card'
 import Label from '../../misc/Label'
@@ -32,9 +33,7 @@ export default function Header(props) {
         <Title>{props.offre.nom_offre}</Title>
         <Description>
           Electricité 100 % verte -{' '}
-          <Tooltip
-            tip={`Déclaratif : Les données présentées sont des données déclarées par le fournisseur, le fournisseur s'engage à respecter ces données mais aucun audit n'a encore eu lieu.`}
-          >
+          <Tooltip tip={setTooltipStatutOffre(props.offre.statut_offre)}>
             {props.offre.statut_offre}
           </Tooltip>
         </Description>

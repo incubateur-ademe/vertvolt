@@ -1,24 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 
-const Wrapper = styled.svg`
-  width: ${(props) => (props.small ? 12 : 23)}rem;
-  height: auto;
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
-`
 export default function tresengagesansraeh(props) {
   return (
-    <Wrapper
-      width='596'
-      height='596'
-      viewBox='0 0 596 596'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-      small={props.small}
-      label={props.label}
-    >
+    <>
       <path
         d='M368.4 306.4H125.2C109.5 306.4 96.6001 319.3 96.6001 335C96.6001 350.8 109.5 363.6 125.2 363.6H368.4C384.2 363.6 397 350.7 397 335C397 319.3 384.1 306.4 368.4 306.4Z'
         fill='url(#paint0_linear)'
@@ -622,6 +606,6 @@ export default function tresengagesansraeh(props) {
           <stop offset='1' stop-color='#94C356' />
         </linearGradient>
       </defs>
-    </Wrapper>
+    </>
   )
 }

@@ -68,7 +68,7 @@ export default function Offre(props) {
               setCurrentOffre(props.offre.nom_offre)
             }}
           >
-            En savoir plus
+            Découvrir l'offre
           </Link>
         </Card.Column>
       </Card.Columns>

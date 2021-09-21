@@ -25,14 +25,14 @@ export default function Fournisseur(props) {
           : 'Ne fait pas appel à l’ARENH.'}
         <br />
         <Tooltip
-          tip={`Pourcentage des clients du fournisseur commercialisant cette offre qui ont souscrit à cette offre,<br/>ou à une autre offre de ce fournisseur labellisée VertVolt.`}
+          tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
           noSup
         >
           {props.offre.clients_offre_labelisee * 100} %
         </Tooltip>{' '}
         de ses clients ont souscrit à une{' '}
         <Tooltip
-          tip={`Pourcentage des clients du fournisseur commercialisant cette offre qui ont souscrit à cette offre,<br/>ou à une autre offre de ce fournisseur labellisée VertVolt.`}
+          tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
         >
           offre labelisée VertVolt
         </Tooltip>

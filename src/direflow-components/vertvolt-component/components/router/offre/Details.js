@@ -10,7 +10,7 @@ export default function Details(props) {
       <Card.Table>
         <Card.Label>
           <Tooltip
-            tip={`Un fournisseur a aujourd'hui l'obligation d'assurer un équilibre mensuel entre l'achat d'électricité verte et la consommation des clients de l'offre.<br/>Cet indicateur mesure cet équilibre en temps réel.<br/>Pour une valeur de 60 %, cela signifie qu'à chaque instant l'électricité achetée par le fournisseur est composée en moyenne à 60 % d'électricité renouvelable, et toujours à 100 % en moyenne sur le mois.`}
+            tip={`Un taux de 60 % par exemple signifie que l'électricité commercialisée dans le cadre de l’offre labellisée est à chaque instant à 60 % d’origine renouvelable en moyenne.<br/>Elle l'est toujours à 100 % en moyenne sur le mois.`}
           >
             Taux moyen de couverture demi-horaire
           </Tooltip>
@@ -22,7 +22,7 @@ export default function Details(props) {
       <Card.Table>
         <Card.Label>
           <Tooltip
-            tip={`Le suivi de consommation est une option que tout client peut activer via son espace personnel sur le site de son fournisseur.<br/>Cette option permet de suivre l'évolution de sa consommation dans le temps à un pas de temps de 30 minutes.`}
+            tip={`Pourcentage des clients de l’offre labellisée ayant activé le suivi de leur consommation en temps réel.`}
           >
             Part des clients de l'offre ayant activé le suivi de consommation
           </Tooltip>

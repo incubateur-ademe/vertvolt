@@ -1,8 +1,8 @@
 export default function (statut) {
   const labels = {
-    'Labélisation sur engagement': `Les données présentées sont des données déclarées par le fournisseur, le fournisseur s'engage à respecter ces données mais aucun audit n'a encore eu lieu.`,
-    'Labélisation après audit': `Les données présentées sont les données certifiées dans le cadre d'un audit réalisé par un organisme indépendant.`,
-    'Labélisation suspendue contrôle en cours': `L'offre a fait l'objet d'un premier audit et certaines informations ont encore besoin d'être investiguées pour en vérifier l'exactitude.`,
+    'Labélisation sur engagement': `Le fournisseur s'est engagé à respecter les critères du label VertVolt.`,
+    'Labélisation après audit': `Le fournisseur a démontré son respect des critères du label VertVolt.`,
+    'Labélisation suspendue contrôle en cours': `Les éléments de preuve du fournisseur vis-à-vis du respect des critères du label VertVolt ont été jugés insuffisants.`,
   }
   return labels[statut]
 }

@@ -10,7 +10,7 @@ export default function Details(props) {
       <Card.Table>
         <Card.Label>
           <Tooltip
-            tip={`Un taux de 60 % par exemple signifie que l'électricité commercialisée dans le cadre de l’offre labellisée est à chaque instant à 60 % d’origine renouvelable en moyenne.<br/>Elle l'est toujours à 100 % en moyenne sur le mois.`}
+            tip={`Un taux de 60 % par exemple signifie que l'électricité commercialisée dans le cadre de l’offre labellisée est à chaque instant à 60 % d’origine renouvelable en moyenne.<br/>Elle est toujours à 100 % en moyenne sur le mois.`}
           >
             Taux moyen de couverture demi-horaire
           </Tooltip>

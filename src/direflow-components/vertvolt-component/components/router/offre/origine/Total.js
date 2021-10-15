@@ -12,14 +12,18 @@ export default function Total(props) {
         current={props.current === 'total'}
       >
         <th>Total</th>
-        <Table.Total>{props.offre.total[props.value]} %</Table.Total>
+        <Table.Total>
+          {Math.round(props.offre.total[props.value] * 1000) / 10} %
+        </Table.Total>
       </Table.Header>
       {props.current === 'total' &&
         props.offre.technologies.map((technologie) =>
           technologie[`total_${props.value}`] ? (
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
-              <Table.Value>{technologie[`total_${props.value}`]} %</Table.Value>
+              <Table.Value>
+                {Math.round(technologie[`total_${props.value}`] * 1000) / 10} %
+              </Table.Value>
             </Table.Technologie>
           ) : null
         )}

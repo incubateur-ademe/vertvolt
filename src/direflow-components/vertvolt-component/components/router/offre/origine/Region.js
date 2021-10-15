@@ -11,14 +11,18 @@ export default function Region(props) {
         current={props.current === props.region.region}
       >
         <th>{props.region.region}</th>
-        <Table.Total>{props.region[`total_${props.value}`]} %</Table.Total>
+        <Table.Total>
+          {Math.round(props.region[`total_${props.value}`] * 1000) / 10} %
+        </Table.Total>
       </Table.Header>
       {props.current === props.region.region &&
         props.region.technologies.map((technologie) =>
           technologie[props.value] ? (
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
-              <Table.Value>{technologie[props.value]} %</Table.Value>
+              <Table.Value>
+                {Math.round(technologie[props.value] * 1000) / 10} %
+              </Table.Value>
             </Table.Technologie>
           ) : null
         )}

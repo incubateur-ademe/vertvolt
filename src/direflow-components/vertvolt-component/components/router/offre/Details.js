@@ -16,7 +16,11 @@ export default function Details(props) {
           </Tooltip>
         </Card.Label>
         <Card.Number>
-          {props.offre.couverture_demi_horaire_offre * 100} %{' '}
+          {props.offre.couverture_demi_horaire_offre ? (
+            <>{props.offre.couverture_demi_horaire_offre * 100} % </>
+          ) : (
+            'NC'
+          )}
         </Card.Number>
       </Card.Table>
       <Card.Table>
@@ -28,7 +32,11 @@ export default function Details(props) {
           </Tooltip>
         </Card.Label>
         <Card.Number>
-          {props.offre.part_suivi_consommation_offre * 100} %{' '}
+          {props.offre.part_suivi_consommation_offre ? (
+            <>{props.offre.part_suivi_consommation_offre * 100} % </>
+          ) : (
+            'NC'
+          )}
         </Card.Number>
       </Card.Table>
     </Card>

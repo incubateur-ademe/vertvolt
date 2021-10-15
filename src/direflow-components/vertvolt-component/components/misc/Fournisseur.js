@@ -24,18 +24,27 @@ export default function Fournisseur(props) {
           ? 'Fait appel à l’ARENH.'
           : 'Ne fait pas appel à l’ARENH.'}
         <br />
-        <Tooltip
-          tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
-          noSup
-        >
-          {props.offre.clients_offre_labelisee * 100} %
-        </Tooltip>{' '}
-        de ses clients ont souscrit à une{' '}
-        <Tooltip
-          tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
-        >
-          offre labelisée VertVolt
-        </Tooltip>
+        {props.offre.clients_offre_labelisee ? (
+          <>
+            <Tooltip
+              tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
+              noSup
+            >
+              {props.offre.clients_offre_labelisee * 100} %
+            </Tooltip>{' '}
+            de ses clients ont souscrit à une{' '}
+            <Tooltip
+              tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
+            >
+              offre labelisée VertVolt
+            </Tooltip>
+          </>
+        ) : (
+          <>
+            Pourcentage des clients du fournisseur ayant souscrit à une offre
+            labellisée VertVolt non communiqué.
+          </>
+        )}
       </Content>
     </Wrapper>
   )

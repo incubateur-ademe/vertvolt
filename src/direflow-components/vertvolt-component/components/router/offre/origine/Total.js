@@ -4,7 +4,6 @@ import setLabelTechnologie from '../../../../utils/setLabelTechnologie'
 import Table from '../../../misc/Table'
 
 export default function Total(props) {
-  console.log(props.offre.total)
   return (
     <Table first>
       <Table.Header

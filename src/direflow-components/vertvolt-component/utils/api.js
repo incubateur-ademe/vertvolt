@@ -35,7 +35,9 @@ export function useOffre(offre) {
     () =>
       axios
         .get(
-          `https://koumoul.com/s/data-fair/api/v1/datasets/vertvolt/lines?nom_offre_in=${offre}&size=1000`
+          `https://koumoul.com/s/data-fair/api/v1/datasets/vertvolt/lines?nom_offre_in=${encodeURIComponent(
+            offre
+          )}&size=1000`
         )
         .then(
           (res) => ({

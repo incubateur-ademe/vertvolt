@@ -20,7 +20,7 @@ export default function Fournisseur(props) {
         {props.offre.nom_fournisseur}
       </Card.Title>
       <Content small={props.small}>
-        {props.offre.Recours_ARENH_fournisseur === 'Oui'
+        {props.offre.Recours_ARENH_fournisseur
           ? 'Fait appel à l’ARENH.'
           : 'Ne fait pas appel à l’ARENH.'}
         <br />

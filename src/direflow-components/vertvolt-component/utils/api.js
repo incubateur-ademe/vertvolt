@@ -18,6 +18,11 @@ export function useOffres() {
             Recours_ARENH_fournisseur: agg.results[0].Recours_ARENH_fournisseur,
             statut_offre: agg.results[0].statut_offre,
           }))
+        )
+        .then((res) =>
+          res.sort((a, b) =>
+            a.niveau_labelisation > b.niveau_labelisation ? -1 : 1
+          )
         ),
     {
       keepPreviousData: true,

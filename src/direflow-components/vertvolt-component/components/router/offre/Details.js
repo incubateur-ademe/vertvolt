@@ -33,7 +33,11 @@ export default function Details(props) {
         </Card.Label>
         <Card.Number>
           {props.offre.part_suivi_consommation_offre ? (
-            <>{props.offre.part_suivi_consommation_offre * 100} % </>
+            <>
+              {Math.round(props.offre.part_suivi_consommation_offre * 1000) /
+                10}{' '}
+              %{' '}
+            </>
           ) : (
             'NC'
           )}

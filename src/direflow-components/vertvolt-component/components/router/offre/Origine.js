@@ -15,7 +15,7 @@ export default function Origine(props) {
         <Card.Column>
           <Map
             offre={props.offre}
-            value={'mwh_offre'}
+            value={'part_offre'}
             current={current}
             setCurrent={setCurrent}
           />
@@ -23,7 +23,7 @@ export default function Origine(props) {
         <Card.Column>
           <Total
             offre={props.offre}
-            value={'mwh_offre'}
+            value={'part_offre'}
             current={current}
             setCurrent={setCurrent}
           />
@@ -31,7 +31,7 @@ export default function Origine(props) {
             <Region
               key={region.region}
               region={region}
-              value={'mwh_offre'}
+              value={'part_offre'}
               current={current}
               setCurrent={setCurrent}
             />

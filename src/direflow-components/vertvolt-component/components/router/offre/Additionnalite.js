@@ -20,7 +20,7 @@ export default function Additionnalite(props) {
           2015 sans soutien public
         </Card.Label>
         <Card.Number>
-          {props.offre.part_sans_soutien_public_offre * 100} %
+          {Math.round(props.offre.part_sans_soutien_public_offre * 1000) / 10} %
         </Card.Number>
       </Card.Table>
       {open === 1 && (
@@ -28,7 +28,7 @@ export default function Additionnalite(props) {
           <Card.Column>
             <Map
               offre={props.offre}
-              value={'mwh_sans_soutien_public'}
+              value={'part_sans_soutien_public'}
               current={current}
               setCurrent={setCurrent}
             />
@@ -36,7 +36,7 @@ export default function Additionnalite(props) {
           <Card.Column>
             <Total
               offre={props.offre}
-              value={'mwh_sans_soutien_public'}
+              value={'part_sans_soutien_public'}
               current={current}
               setCurrent={setCurrent}
             />
@@ -44,7 +44,7 @@ export default function Additionnalite(props) {
               <Region
                 key={region.region}
                 region={region}
-                value={'mwh_sans_soutien_public'}
+                value={'part_sans_soutien_public'}
                 current={current}
                 setCurrent={setCurrent}
               />
@@ -60,7 +60,8 @@ export default function Additionnalite(props) {
           partagée
         </Card.Label>
         <Card.Number>
-          {props.offre.part_gouvernance_partagee_offre * 100} %
+          {Math.round(props.offre.part_gouvernance_partagee_offre * 1000) / 10}{' '}
+          %
         </Card.Number>
       </Card.Table>
       {open === 2 && (
@@ -68,7 +69,7 @@ export default function Additionnalite(props) {
           <Card.Column>
             <Map
               offre={props.offre}
-              value={'mwh_gouvernance_partagee'}
+              value={'part_gouvernance_partagee'}
               current={current}
               setCurrent={setCurrent}
             />
@@ -76,7 +77,7 @@ export default function Additionnalite(props) {
           <Card.Column>
             <Total
               offre={props.offre}
-              value={'mwh_gouvernance_partagee'}
+              value={'part_gouvernance_partagee'}
               current={current}
               setCurrent={setCurrent}
             />
@@ -84,7 +85,7 @@ export default function Additionnalite(props) {
               <Region
                 key={region.region}
                 region={region}
-                value={'mwh_gouvernance_partagee'}
+                value={'part_gouvernance_partagee'}
                 current={current}
                 setCurrent={setCurrent}
               />

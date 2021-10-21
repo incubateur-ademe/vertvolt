@@ -59,10 +59,11 @@ export function useOffre(offre) {
                   )
                   .map((technoLine) => ({
                     technologie: technoLine.technologie,
-                    mwh_offre: technoLine.mwh_offre,
-                    mwh_gouvernance_partagee:
-                      technoLine.mwh_gouvernance_partagee,
-                    mwh_sans_soutien_public: technoLine.mwh_sans_soutien_public,
+                    part_offre: technoLine.part_offre,
+                    part_gouvernance_partagee:
+                      technoLine.part_gouvernance_partagee,
+                    part_sans_soutien_public:
+                      technoLine.part_sans_soutien_public,
                   })),
               }))
               .reduce(
@@ -82,10 +83,11 @@ export function useOffre(offre) {
                   )
                   .map((regionLine) => ({
                     region: regionLine.region,
-                    mwh_offre: regionLine.mwh_offre,
-                    mwh_gouvernance_partagee:
-                      regionLine.mwh_gouvernance_partagee,
-                    mwh_sans_soutien_public: regionLine.mwh_sans_soutien_public,
+                    part_offre: regionLine.part_offre || 0,
+                    part_gouvernance_partagee:
+                      regionLine.part_gouvernance_partagee || 0,
+                    part_sans_soutien_public:
+                      regionLine.part_sans_soutien_public || 0,
                   })),
               }))
               .reduce(
@@ -102,16 +104,16 @@ export function useOffre(offre) {
           ...offre,
           regions: offre.regions.map((region) => ({
             ...region,
-            total_mwh_offre: region.technologies.reduce(
-              (acc, cur) => acc + cur.mwh_offre,
+            total_part_offre: region.technologies.reduce(
+              (acc, cur) => acc + cur.part_offre || 0,
               0
             ),
-            total_mwh_gouvernance_partagee: region.technologies.reduce(
-              (acc, cur) => acc + cur.mwh_gouvernance_partagee,
+            total_part_gouvernance_partagee: region.technologies.reduce(
+              (acc, cur) => acc + cur.part_gouvernance_partagee || 0,
               0
             ),
-            total_mwh_sans_soutien_public: region.technologies.reduce(
-              (acc, cur) => acc + cur.mwh_sans_soutien_public,
+            total_part_sans_soutien_public: region.technologies.reduce(
+              (acc, cur) => acc + cur.part_sans_soutien_public || 0,
               0
             ),
           })),
@@ -120,16 +122,16 @@ export function useOffre(offre) {
           ...offre,
           technologies: offre.technologies.map((technologie) => ({
             ...technologie,
-            total_mwh_offre: technologie.regions.reduce(
-              (acc, cur) => acc + cur.mwh_offre,
+            total_part_offre: technologie.regions.reduce(
+              (acc, cur) => acc + cur.part_offre || 0,
               0
             ),
-            total_mwh_gouvernance_partagee: technologie.regions.reduce(
-              (acc, cur) => acc + cur.mwh_gouvernance_partagee,
+            total_part_gouvernance_partagee: technologie.regions.reduce(
+              (acc, cur) => acc + cur.part_gouvernance_partagee || 0,
               0
             ),
-            total_mwh_sans_soutien_public: technologie.regions.reduce(
-              (acc, cur) => acc + cur.mwh_sans_soutien_public,
+            total_part_sans_soutien_public: technologie.regions.reduce(
+              (acc, cur) => acc + cur.part_sans_soutien_public || 0,
               0
             ),
           })),
@@ -137,29 +139,29 @@ export function useOffre(offre) {
         .then((offre) => ({
           ...offre,
           total: {
-            mwh_offre: offre.regions.reduce(
+            part_offre: offre.regions.reduce(
               (acc, cur) =>
                 acc +
                 cur.technologies.reduce(
-                  (acc2, cur2) => acc2 + cur2.mwh_offre,
+                  (acc2, cur2) => acc2 + cur2.part_offre || 0,
                   0
                 ),
               0
             ),
-            mwh_gouvernance_partagee: offre.regions.reduce(
+            part_gouvernance_partagee: offre.regions.reduce(
               (acc, cur) =>
                 acc +
                 cur.technologies.reduce(
-                  (acc2, cur2) => acc2 + cur2.mwh_gouvernance_partagee,
+                  (acc2, cur2) => acc2 + cur2.part_gouvernance_partagee || 0,
                   0
                 ),
               0
             ),
-            mwh_sans_soutien_public: offre.regions.reduce(
+            part_sans_soutien_public: offre.regions.reduce(
               (acc, cur) =>
                 acc +
                 cur.technologies.reduce(
-                  (acc2, cur2) => acc2 + cur2.mwh_sans_soutien_public,
+                  (acc2, cur2) => acc2 + cur2.part_sans_soutien_public || 0,
                   0
                 ),
               0

@@ -10,7 +10,7 @@ export default function List() {
   const { data } = useOffres()
 
   const [currentPage, setCurrentPage] = useState(0)
-  const offresPerPage = 5
+  const offresPerPage = 10
 
   const { search, fournisseur, label } = useContext(SearchContext)
 

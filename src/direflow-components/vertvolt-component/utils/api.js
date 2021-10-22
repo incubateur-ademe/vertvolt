@@ -7,7 +7,7 @@ export function useOffres() {
     () =>
       axios
         .get(
-          `https://koumoul.com/s/data-fair/api/v1/datasets/vertvolt/values_agg?field=nom_offre&size=1&select=nom_offre,niveau_labelisation,statut_offre,nom_fournisseur,Recours_ARENH_fournisseur,clients_offre_labelisee`
+          `https://data.ademe.fr/data-fair/api/v1/datasets/vertvolt/values_agg?field=nom_offre&size=1&select=nom_offre,niveau_labelisation,statut_offre,nom_fournisseur,Recours_ARENH_fournisseur,clients_offre_labelisee`
         )
         .then((res) =>
           res.data.aggs.map((agg) => ({
@@ -35,7 +35,7 @@ export function useOffre(offre) {
     () =>
       axios
         .get(
-          `https://koumoul.com/s/data-fair/api/v1/datasets/vertvolt/lines?nom_offre_in=${encodeURIComponent(
+          `https://data.ademe.fr/data-fair/api/v1/datasets/vertvolt/lines?nom_offre_in=${encodeURIComponent(
             offre
           )}&size=1000`
         )

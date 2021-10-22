@@ -35,7 +35,7 @@ const Link = styled.a`
 `
 export default function Offre(props) {
   const { setCurrentOffre } = useContext(SearchContext)
-  console.log(props.offre.niveau_labelisation)
+
   return (
     <Card list>
       <Card.Columns>

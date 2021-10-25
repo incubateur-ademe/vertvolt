@@ -1,10 +1,15 @@
-This component was bootstrapped with [Direflow](https://direflow.io).
+# VertVolt
 
-# Vertvolt Component
-> This project is created using Direflow
+Web component permettant d'explorer les offres du label VertVolt
 
-```html
-<vertvolt-component></vertvolt-component>
-```
+https://agirpourlatransition.ademe.fr/particuliers/vertvolt
 
-Use this README to describe your Direflow Component
+## Développement
+
+`yarn` pour installer l'application
+
+`yarn start` pour lancer l'application sur [http://localhost:3000](http://localhost:3000)
+
+## Déploiement
+
+Hébergement via Netlify. Il suffit de push sur ce repo (branche master) pour déployer.

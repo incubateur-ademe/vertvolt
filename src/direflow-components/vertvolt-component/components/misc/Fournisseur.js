@@ -20,9 +20,25 @@ export default function Fournisseur(props) {
         {props.offre.nom_fournisseur}
       </Card.Title>
       <Content small={props.small}>
-        {props.offre.Recours_ARENH_fournisseur
-          ? 'Fait appel à l’ARENH.'
-          : 'Ne fait pas appel à l’ARENH.'}
+        {props.offre.Recours_ARENH_fournisseur ? (
+          <>
+            Fait appel à l’
+            <Tooltip
+              tip={`Accès Régulé à l'Electricité Nucléaire Historique :<br/>permet aux fournisseurs d'acheter de l'électricité nucléaire dans des conditions fixées par les pouvoirs publics.`}
+            >
+              ARENH
+            </Tooltip>
+          </>
+        ) : (
+          <>
+            Ne fait pas appel à l
+            <Tooltip
+              tip={`Accès Régulé à l'Electricité Nucléaire Historique :<br/>permet aux fournisseurs d'acheter de l'électricité nucléaire dans des conditions fixées par les pouvoirs publics.`}
+            >
+              ARENH
+            </Tooltip>
+          </>
+        )}
         <br />
         {props.offre.clients_offre_labelisee ? (
           <>

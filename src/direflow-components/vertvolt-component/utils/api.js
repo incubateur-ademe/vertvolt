@@ -39,28 +39,27 @@ export function useOffre(offre) {
             offre
           )}&size=1000`
         )
+        .then((res) => res.data.results.filter((line) => line.part_offre))
         .then(
-          (res) => ({
-            nom_offre: res.data.results[0].nom_offre,
-            clients_offre_labelisee:
-              res.data.results[0].clients_offre_labelisee,
-            niveau_labelisation: res.data.results[0].niveau_labelisation,
-            nom_fournisseur: res.data.results[0].nom_fournisseur,
-            Recours_ARENH_fournisseur:
-              res.data.results[0].Recours_ARENH_fournisseur,
-            statut_offre: res.data.results[0].statut_offre,
+          (results) => ({
+            nom_offre: results[0].nom_offre,
+            clients_offre_labelisee: results[0].clients_offre_labelisee,
+            niveau_labelisation: results[0].niveau_labelisation,
+            nom_fournisseur: results[0].nom_fournisseur,
+            Recours_ARENH_fournisseur: results[0].Recours_ARENH_fournisseur,
+            statut_offre: results[0].statut_offre,
             part_gouvernance_partagee_offre:
-              res.data.results[0].part_gouvernance_partagee_offre,
+              results[0].part_gouvernance_partagee_offre,
             part_sans_soutien_public_offre:
-              res.data.results[0].part_sans_soutien_public_offre,
+              results[0].part_sans_soutien_public_offre,
             couverture_demi_horaire_offre:
-              res.data.results[0].couverture_demi_horaire_offre,
+              results[0].couverture_demi_horaire_offre,
             part_suivi_consommation_offre:
-              res.data.results[0].part_suivi_consommation_offre,
-            regions: res.data.results
+              results[0].part_suivi_consommation_offre,
+            regions: results
               .map((regionLine) => ({
                 region: regionLine.region,
-                technologies: res.data.results
+                technologies: results
                   .filter(
                     (technoLine) => technoLine.region === regionLine.region
                   )
@@ -80,10 +79,10 @@ export function useOffre(offre) {
                     : [...acc, cur],
                 []
               ),
-            technologies: res.data.results
+            technologies: results
               .map((technoLine) => ({
                 technologie: technoLine.technologie,
-                regions: res.data.results
+                regions: results
                   .filter(
                     (regionLine) =>
                       regionLine.technologie === technoLine.technologie

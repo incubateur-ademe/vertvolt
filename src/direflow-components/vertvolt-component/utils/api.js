@@ -7,18 +7,22 @@ export function useOffres() {
     () =>
       axios
         .get(
-          `https://data.ademe.fr/data-fair/api/v1/datasets/vertvolt/values_agg?field=nom_offre&size=1&select=nom_offre,niveau_labelisation,statut_offre,nom_fournisseur,Recours_ARENH_fournisseur,clients_offre_labelisee`
+          `https://data.ademe.fr/data-fair/api/v1/datasets/vertvolt/values_agg?field=nom_offre;nom_fournisseur&size=1&select=nom_offre,niveau_labelisation,statut_offre,nom_fournisseur,Recours_ARENH_fournisseur,clients_offre_labelisee`
         )
         .then((res) =>
-          res.data.aggs.map((agg) => ({
-            nom_offre: agg.results[0].nom_offre,
-            clients_offre_labelisee: agg.results[0].clients_offre_labelisee,
-            niveau_labelisation: agg.results[0].niveau_labelisation,
-            nom_fournisseur: agg.results[0].nom_fournisseur,
-            Recours_ARENH_fournisseur: agg.results[0].Recours_ARENH_fournisseur,
-            statut_offre: agg.results[0].statut_offre,
-          }))
+          res.data.aggs.map((aggName) =>
+            aggName.aggs.map((agg) => ({
+              nom_offre: agg.results[0].nom_offre,
+              clients_offre_labelisee: agg.results[0].clients_offre_labelisee,
+              niveau_labelisation: agg.results[0].niveau_labelisation,
+              nom_fournisseur: agg.results[0].nom_fournisseur,
+              Recours_ARENH_fournisseur:
+                agg.results[0].Recours_ARENH_fournisseur,
+              statut_offre: agg.results[0].statut_offre,
+            }))
+          )
         )
+        .then((res) => res.reduce((acc, cur) => [...acc, ...cur], []))
         .then((res) =>
           res.sort((a, b) =>
             a.niveau_labelisation > b.niveau_labelisation ? -1 : 1
@@ -36,10 +40,15 @@ export function useOffre(offre) {
       axios
         .get(
           `https://data.ademe.fr/data-fair/api/v1/datasets/vertvolt/lines?nom_offre_in=${encodeURIComponent(
-            offre
+            offre.nom_offre
           )}&size=1000`
         )
-        .then((res) => res.data.results.filter((line) => line.part_offre))
+        .then((res) =>
+          res.data.results.filter(
+            (line) =>
+              line.part_offre && line.nom_fournisseur === offre.nom_fournisseur
+          )
+        )
         .then(
           (results) => ({
             nom_offre: results[0].nom_offre,

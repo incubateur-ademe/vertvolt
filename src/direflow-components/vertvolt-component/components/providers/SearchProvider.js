@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import SearchContext from '../../utils/SearchContext'
 
 export default function SearchProvider(props) {
-  const [currentOffre, setCurrentOffre] = useState('')
+  const [currentOffre, setCurrentOffre] = useState(null)
 
   const [search, setSearch] = useState('')
   const [fournisseur, setFournisseur] = useState('')

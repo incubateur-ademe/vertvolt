@@ -55,7 +55,10 @@ export default function List() {
           (offre, index) =>
             index >= currentPage * offresPerPage &&
             index < currentPage * offresPerPage + offresPerPage && (
-              <Offre key={offre.nom_offre} offre={offre} />
+              <Offre
+                key={offre.nom_offre + offre.nom_fournisseur}
+                offre={offre}
+              />
             )
         )}
       </div>

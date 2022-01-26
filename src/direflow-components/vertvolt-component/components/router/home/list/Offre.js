@@ -35,7 +35,6 @@ const Link = styled.a`
 `
 export default function Offre(props) {
   const { setCurrentOffre } = useContext(SearchContext)
-
   return (
     <Card list>
       <Card.Columns>
@@ -45,10 +44,10 @@ export default function Offre(props) {
             href={`/#${props.offre.nom_offre}`}
             onClick={(e) => {
               e.preventDefault()
-              setCurrentOffre(props.offre.nom_offre)
+              setCurrentOffre(props.offre)
             }}
           >
-            <Title onClick={() => setCurrentOffre(props.offre.nom_offre)}>
+            <Title onClick={() => setCurrentOffre(props.offre)}>
               {props.offre.nom_offre}
             </Title>
           </TitleLink>
@@ -66,7 +65,7 @@ export default function Offre(props) {
             href={`/#${props.offre.nom_offre}`}
             onClick={(e) => {
               e.preventDefault()
-              setCurrentOffre(props.offre.nom_offre)
+              setCurrentOffre(props.offre)
             }}
           >
             Découvrir l'offre

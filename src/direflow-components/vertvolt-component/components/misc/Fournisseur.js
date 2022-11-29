@@ -31,7 +31,7 @@ export default function Fournisseur(props) {
           </>
         ) : (
           <>
-            Ne fait pas appel à l
+            Ne fait pas appel à l’
             <Tooltip
               tip={`Accès Régulé à l'Electricité Nucléaire Historique :<br/>permet aux fournisseurs d'acheter de l'électricité nucléaire dans des conditions fixées par les pouvoirs publics.`}
             >

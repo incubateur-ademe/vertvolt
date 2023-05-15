@@ -46,7 +46,11 @@ export default function Fournisseur(props) {
               tip={`Pourcentage des clients du fournisseur ayant souscrit à une offre labellisée VertVolt.`}
               noSup
             >
-              {props.offre.clients_offre_labelisee * 100} %
+              {(props.offre.clients_offre_labelisee * 100).toLocaleString(
+                'fr-fr',
+                { maximumFractionDigits: 2 }
+              )}{' '}
+              %
             </Tooltip>{' '}
             de ses clients ont souscrit à une{' '}
             <Tooltip

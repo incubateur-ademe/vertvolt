@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": "16"
+  },
   "keywords": [
     "direflow",
     "react",

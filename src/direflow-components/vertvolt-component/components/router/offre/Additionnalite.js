@@ -20,7 +20,10 @@ export default function Additionnalite(props) {
           2015 sans soutien public
         </Card.Label>
         <Card.Number>
-          {Math.round(props.offre.part_sans_soutien_public_offre * 1000) / 10} %
+          {props.offre.part_sans_soutien_public_offre.toLocaleString('fr-fr', {
+            maximumFractionDigits: 2,
+          })}{' '}
+          %
         </Card.Number>
       </Card.Table>
       {open === 1 && (
@@ -60,7 +63,9 @@ export default function Additionnalite(props) {
           partagée
         </Card.Label>
         <Card.Number>
-          {Math.round(props.offre.part_gouvernance_partagee_offre * 1000) / 10}{' '}
+          {props.offre.part_gouvernance_partagee_offre.toLocaleString('fr-fr', {
+            maximumFractionDigits: 2,
+          })}{' '}
           %
         </Card.Number>
       </Card.Table>

@@ -12,7 +12,10 @@ export default function Region(props) {
       >
         <th>{props.region.region}</th>
         <Table.Total>
-          {Math.round(props.region[`total_${props.value}`] * 1000) / 10} %
+          {props.region[`total_${props.value}`].toLocaleString('fr-fr', {
+            maximumFractionDigits: 2,
+          })}{' '}
+          %
         </Table.Total>
       </Table.Header>
       {props.current === props.region.region &&
@@ -21,7 +24,10 @@ export default function Region(props) {
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
               <Table.Value>
-                {Math.round(technologie[props.value] * 1000) / 10} %
+                {technologie[props.value].toLocaleString('fr-fr', {
+                  maximumFractionDigits: 2,
+                })}{' '}
+                %
               </Table.Value>
             </Table.Technologie>
           ) : null

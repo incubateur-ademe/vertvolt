@@ -34,8 +34,10 @@ export default function Details(props) {
         <Card.Number>
           {props.offre.part_suivi_consommation_offre ? (
             <>
-              {Math.round(props.offre.part_suivi_consommation_offre * 1000) /
-                10}{' '}
+              {props.offre.part_suivi_consommation_offre.toLocaleString(
+                'fr-fr',
+                { maximumFractionDigits: 2 }
+              )}{' '}
               %{' '}
             </>
           ) : (

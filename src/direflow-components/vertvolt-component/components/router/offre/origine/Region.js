@@ -12,9 +12,12 @@ export default function Region(props) {
       >
         <th>{props.region.region}</th>
         <Table.Total>
-          {props.region[`total_${props.value}`].toLocaleString('fr-fr', {
-            maximumFractionDigits: 2,
-          })}{' '}
+          {(props.region[`total_${props.value}`] * 100).toLocaleString(
+            'fr-fr',
+            {
+              maximumFractionDigits: 2,
+            }
+          )}{' '}
           %
         </Table.Total>
       </Table.Header>
@@ -24,7 +27,7 @@ export default function Region(props) {
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
               <Table.Value>
-                {technologie[props.value].toLocaleString('fr-fr', {
+                {(technologie[props.value] * 100).toLocaleString('fr-fr', {
                   maximumFractionDigits: 2,
                 })}{' '}
                 %

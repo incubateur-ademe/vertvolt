@@ -20,9 +20,12 @@ export default function Additionnalite(props) {
           2015 sans soutien public
         </Card.Label>
         <Card.Number>
-          {props.offre.part_sans_soutien_public_offre.toLocaleString('fr-fr', {
-            maximumFractionDigits: 2,
-          })}{' '}
+          {(props.offre.part_sans_soutien_public_offre * 100).toLocaleString(
+            'fr-fr',
+            {
+              maximumFractionDigits: 2,
+            }
+          )}{' '}
           %
         </Card.Number>
       </Card.Table>
@@ -63,9 +66,12 @@ export default function Additionnalite(props) {
           partagée
         </Card.Label>
         <Card.Number>
-          {props.offre.part_gouvernance_partagee_offre.toLocaleString('fr-fr', {
-            maximumFractionDigits: 2,
-          })}{' '}
+          {(props.offre.part_gouvernance_partagee_offre * 100).toLocaleString(
+            'fr-fr',
+            {
+              maximumFractionDigits: 2,
+            }
+          )}{' '}
           %
         </Card.Number>
       </Card.Table>

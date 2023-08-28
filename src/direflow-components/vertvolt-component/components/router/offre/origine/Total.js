@@ -12,7 +12,7 @@ export default function Total(props) {
       >
         <th>Total</th>
         <Table.Total>
-          {props.offre.total[props.value].toLocaleString('fr-fr', {
+          {(props.offre.total[props.value] * 100).toLocaleString('fr-fr', {
             maximumFractionDigits: 2,
           })}{' '}
           %
@@ -24,9 +24,12 @@ export default function Total(props) {
             <Table.Technologie key={technologie.technologie}>
               <td>{setLabelTechnologie(technologie.technologie)}</td>
               <Table.Value>
-                {technologie[`total_${props.value}`].toLocaleString('fr-fr', {
-                  maximumFractionDigits: 2,
-                })}{' '}
+                {(technologie[`total_${props.value}`] * 100).toLocaleString(
+                  'fr-fr',
+                  {
+                    maximumFractionDigits: 2,
+                  }
+                )}{' '}
                 %
               </Table.Value>
             </Table.Technologie>

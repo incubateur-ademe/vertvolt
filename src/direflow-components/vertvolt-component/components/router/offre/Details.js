@@ -32,9 +32,10 @@ export default function Details(props) {
           </Tooltip>
         </Card.Label>
         <Card.Number>
-          {props.offre.part_suivi_consommation_offre ? (
+          {props.offre.part_suivi_consommation_offre &&
+          props.offre.part_suivi_consommation_offre !== 'NC' ? (
             <>
-              {props.offre.part_suivi_consommation_offre.toLocaleString(
+              {(props.offre.part_suivi_consommation_offre * 100).toLocaleString(
                 'fr-fr',
                 { maximumFractionDigits: 2 }
               )}{' '}

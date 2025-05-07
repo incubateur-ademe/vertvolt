@@ -1,8 +1,8 @@
 {
   "name": "vertvolt-component",
-  "description": "This project is created using Direflow",
+  "description": "VertVolt web component.",
   "version": "1.0.0",
-  "author": "",
+  "author": "Incubateur ADEME",
   "license": "MIT",
   "engines": {
     "node": "16"
@@ -15,11 +15,7 @@
   "homepage": "https://direflow.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Silind-Software/direflow"
-  },
-  "bugs": {
-    "email": "direflow@silind.com",
-    "url": "https://github.com/Silind-Software/direflow/issues/new"
+    "url": "https://github.com/incubateur-ademe/vertvolt"
   },
   "main": "build/direflowBundle.js",
   "files": [

@@ -24,13 +24,7 @@ export default function Label() {
       }}
     >
       <option value={''}>Label</option>
-      <option value='Niveau très engagé sans ARENH'>
-        Offre très engagée sans nucléaire
-      </option>
       <option value='Niveau très engagé'>Offre très engagée</option>
-      <option value='Niveau engagé sans ARENH'>
-        Offre engagée sans nucléaire
-      </option>
       <option value='Niveau engagé'>Offre engagée</option>
     </Wrapper>
   )

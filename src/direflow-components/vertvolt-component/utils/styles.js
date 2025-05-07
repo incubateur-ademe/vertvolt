@@ -11,9 +11,7 @@ export const themes = {
       input: '#F5F5F5',
       mainLight: '#E5EDF5',
       label: {
-        'Niveau très engagé sans ARENH': '#128371',
         'Niveau très engagé': '#128371',
-        'Niveau engagé sans ARENH': '#ECC505',
         'Niveau engagé': '#ECC505',
       },
     },

@@ -13,16 +13,12 @@ const Badge = styled.span`
   background-color: ${(props) => props.theme.colors.label[props.label]};
   border-radius: 0.3rem;
 `
-const Nuclear = styled.span`
-  margin-left: 0.6rem;
-`
 export default function label(props) {
   return (
     <Wrapper label={props.label}>
       <Badge label={props.label}>
         {props.label.includes('très') ? 'Très engagé' : 'Engagé'}
       </Badge>
-      {props.label.includes('ARENH') && <Nuclear>Sans Nucléaire</Nuclear>}
     </Wrapper>
   )
 }

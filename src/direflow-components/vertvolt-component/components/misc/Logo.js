@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import TresEngageSansRaeh from './logo/TresEngageSansRaeh.js'
 import TresEngage from './logo/TresEngage.js'
-import EngageSansRaeh from './logo/EngageSansRaeh.js'
 import Engage from './logo/Engage.js'
 
 const Wrapper = styled.svg`
@@ -24,12 +22,8 @@ export default function Logo(props) {
       small={props.small}
       label={props.label}
     >
-      {props.label === 'Niveau très engagé sans ARENH' ? (
-        <TresEngageSansRaeh small={props.small} label={props.label} />
-      ) : props.label === 'Niveau très engagé' ? (
+      {props.label === 'Niveau très engagé' ? (
         <TresEngage small={props.small} label={props.label} />
-      ) : props.label === 'Niveau engagé sans ARENH' ? (
-        <EngageSansRaeh small={props.small} label={props.label} />
       ) : (
         <Engage small={props.small} label={props.label} />
       )}
